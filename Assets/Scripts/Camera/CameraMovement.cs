@@ -15,14 +15,14 @@ public class CameraMovement : MonoBehaviour
     public void SetAxis(Vector2 axis)
     { 
         cameraTransform.position = new Vector3(
-            Mathf.Clamp(cameraTransform.position.x + axis.x * speed * Time.deltaTime, -WorldSize / 2 + _camera.fieldOfView, WorldSize / 2 - _camera.fieldOfView), 
+            Mathf.Clamp(cameraTransform.position.x + axis.x * speed * Time.deltaTime, -WorldSize / 2 + _camera.transform.localPosition.magnitude, WorldSize / 2 - _camera.transform.localPosition.magnitude), 
             cameraTransform.position.y, 
-            Mathf.Clamp(cameraTransform.position.z + axis.y * speed * Time.deltaTime, -WorldSize / 2 + _camera.fieldOfView, WorldSize / 2 - _camera.fieldOfView)
+            Mathf.Clamp(cameraTransform.position.z + axis.y * speed * Time.deltaTime, -WorldSize / 2 + _camera.transform.localPosition.magnitude, WorldSize / 2 - _camera.transform.localPosition.magnitude)
             );
     }
-    public void AddFieldOfView(float value)
+    public void AddZoom(float value)
     {
-        _camera.fieldOfView = Mathf.Clamp(_camera.fieldOfView + value, minView, maxView);
+        _camera.transform.localPosition = _camera.transform.localPosition.normalized * Mathf.Clamp(_camera.transform.localPosition.magnitude + value * scrollStrength * Time.deltaTime, minView, maxView);
     }
     private void Start()
     {

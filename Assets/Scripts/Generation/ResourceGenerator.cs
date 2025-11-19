@@ -51,7 +51,7 @@ public class ResourceGenerator : MonoBehaviour
             for (int x = 0; x < _worldSize; x++)
             {
                 if (!IsInsideBase(x, y))
-                    _map[x, y] = Mathf.PerlinNoise((float)x / _worldSize * 45, (float)y / _worldSize * 45) * spawnRate;
+                    _map[x, y] = Mathf.PerlinNoise((float)x / 2.88f, (float)y / 2.88f) * spawnRate;
             }
         }
     }

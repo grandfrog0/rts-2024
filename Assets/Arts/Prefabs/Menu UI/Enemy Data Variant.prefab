@@ -457,7 +457,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -5795776389945774003}
+        m_TargetAssemblyTypeName: EnemyDataItem, Assembly-CSharp
+        m_MethodName: OnNameChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -661,7 +673,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4804494173069205636, guid: d8ab4e2c813cf2342a297a02a5d4559c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3646050642239899691}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2076901589123986605, guid: d8ab4e2c813cf2342a297a02a5d4559c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5795776389945774003}
   m_SourcePrefab: {fileID: 100100000, guid: d8ab4e2c813cf2342a297a02a5d4559c, type: 3}
 --- !u!224 &1527554347457118740 stripped
 RectTransform:
@@ -673,3 +688,22 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4804494173069205636, guid: d8ab4e2c813cf2342a297a02a5d4559c, type: 3}
   m_PrefabInstance: {fileID: 7154418770715864795}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9195007980889315958 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2076901589123986605, guid: d8ab4e2c813cf2342a297a02a5d4559c, type: 3}
+  m_PrefabInstance: {fileID: 7154418770715864795}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-5795776389945774003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9195007980889315958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4250c573d2f7cee409106ef6ccc2e477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 8370615718377021979}
+  inputField: {fileID: 3856602209615703795}

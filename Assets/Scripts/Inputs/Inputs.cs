@@ -10,10 +10,10 @@ public class Inputs : MonoBehaviour
         Vector2 axis = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         cameraMovement.SetAxis(axis);
 
-        float scrollValue = Input.GetAxis("Mouse Scroll Y");
+        float scrollValue = Input.GetAxis("Mouse ScrollWheel");
         if (scrollValue != 0f)
         {
-            cameraMovement.AddFieldOfView(scrollValue);
+            cameraMovement.AddZoom(scrollValue);
         }
     }
 }

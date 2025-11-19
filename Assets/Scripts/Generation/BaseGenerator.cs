@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class BaseGenerator : MonoBehaviour
 {
     private int _worldSize;
     private float _baseRange;
-    [SerializeField] List<string> basesNames;
+    private List<string> _basesNames;
     [SerializeField] GameObject townHall;
     [SerializeField] GameObject worker, archer;
     [SerializeField] TMP_Text titleText;
@@ -18,9 +19,12 @@ public class BaseGenerator : MonoBehaviour
     private List<Vector2> _basesPositions = new();
     public List<Vector2> BasesPosition => _basesPositions;
 
-    public void Initialize(int worldSize, float baseRange)
+    public void Initialize(GameConfig gameConfig, float baseRange)
     {
-        _worldSize = worldSize;
+        _worldSize = gameConfig.WorldSize;
+        _basesNames = new() { gameConfig.PlayerData.Name };
+        _basesNames.AddRange(gameConfig.EnemiesData.Select(x => x.Name));
+
         _baseRange = baseRange;
 
         GenerateBases();
@@ -30,16 +34,16 @@ public class BaseGenerator : MonoBehaviour
     {
         _basesPositions.Clear();
 
-        float angleDelta = -360 / basesNames.Count;
+        float angleDelta = -360 / _basesNames.Count;
 
         float currentAngle = Random.Range(0, 360);
-        Vector2 currentPos = Quaternion.Euler(0, 0, currentAngle) * Vector2.up * (_worldSize / 2 - _baseRange * 2);
+        Vector2 currentPos = Quaternion.Euler(0, 0, currentAngle) * Vector2.up * (_worldSize / 2 - _baseRange * 8);
         _basesPositions.Add(currentPos);
         
-        for (int i = 0; i < basesNames.Count - 1; i++)
+        for (int i = 0; i < _basesNames.Count - 1; i++)
         {
             currentAngle += angleDelta;
-            currentPos = Quaternion.Euler(0, 0, currentAngle) * Vector2.up * (_worldSize / 2 - _baseRange * 2);
+            currentPos = Quaternion.Euler(0, 0, currentAngle) * Vector2.up * (_worldSize / 2 - _baseRange * 8);
             _basesPositions.Add(currentPos);
         }
     }
@@ -51,7 +55,7 @@ public class BaseGenerator : MonoBehaviour
         for (int i = 0; i < _basesPositions.Count; i++)
         {
             position = _basesPositions[i];
-            title = basesNames[i];
+            title = _basesNames[i];
 
             Instantiate(townHall, new Vector3(position.x, 1, position.y), Quaternion.Euler(0, 180, 0), unitsParent);
 
