@@ -32,7 +32,7 @@ public class GameSettingsWindow : MonoBehaviour
         gameConfig.PlayerData = playerDataItem.EnemyData;
         gameConfig.EnemiesData = _enemyItems.Select(x => x.EnemyData).ToList();
         gameConfig.Hardness = _hardness;
-        gameConfig.WorldSize = _worldSize;
+        gameConfig.WorldSize = _worldSize / 6;
 
         return gameConfig;
     }

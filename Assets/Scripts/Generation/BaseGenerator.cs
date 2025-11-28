@@ -14,7 +14,6 @@ public class BaseGenerator : MonoBehaviour
     [SerializeField] GameObject townHall;
     [SerializeField] GameObject worker, archer;
     [SerializeField] TMP_Text titleText;
-    [SerializeField] Transform unitsParent;
     [SerializeField] Transform uiParent;
     private List<Vector2> _basesPositions = new();
     public List<Vector2> BasesPosition => _basesPositions;
@@ -57,14 +56,14 @@ public class BaseGenerator : MonoBehaviour
             position = _basesPositions[i];
             title = _basesNames[i];
 
-            Instantiate(townHall, new Vector3(position.x, 1, position.y), Quaternion.Euler(0, 180, 0), unitsParent);
+            EntitySpawner.Spawn(townHall, new Vector3(position.x, 1, position.y), Quaternion.Euler(0, 180, 0), i);
 
-            Instantiate(worker, new Vector3(position.x - 2, 0, position.y - 3), Quaternion.identity, unitsParent);
-            Instantiate(worker, new Vector3(position.x - 1, 0, position.y - 3), Quaternion.identity, unitsParent);
-            Instantiate(worker, new Vector3(position.x, 0, position.y - 3), Quaternion.identity, unitsParent);
-
-            Instantiate(archer, new Vector3(position.x + 1, 0, position.y - 3), Quaternion.identity, unitsParent);
-            Instantiate(archer, new Vector3(position.x + 2, 0, position.y - 3), Quaternion.identity, unitsParent);
+            EntitySpawner.Spawn(worker, new Vector3(position.x - 2, 0, position.y - 3), Quaternion.identity, i);
+            EntitySpawner.Spawn(worker, new Vector3(position.x - 1, 0, position.y - 3), Quaternion.identity, i);
+            EntitySpawner.Spawn(worker, new Vector3(position.x, 0, position.y - 3), Quaternion.identity, i);
+            
+            EntitySpawner.Spawn(archer, new Vector3(position.x + 1, 0, position.y - 3), Quaternion.identity, i);
+            EntitySpawner.Spawn(archer, new Vector3(position.x + 2, 0, position.y - 3), Quaternion.identity, i);
 
             TMP_Text text = Instantiate(titleText, uiParent);
             text.rectTransform.anchoredPosition = position;

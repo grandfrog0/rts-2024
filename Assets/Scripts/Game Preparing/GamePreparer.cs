@@ -6,12 +6,18 @@ public class GamePreparer : MonoBehaviour
 {
     [SerializeField] GenerationManager generationManager;
     [SerializeField] CameraMovement cameraMovement;
+    [SerializeField] EntitySpawner spawner;
+    [SerializeField] Camera mapCamera;
 
     public void Prepare(GameConfig gameConfig)
     {
+        spawner.Initialize();
+
         generationManager.WorldSize = gameConfig.WorldSize;
         generationManager.StartGeneration(gameConfig);
         cameraMovement.WorldSize = gameConfig.WorldSize;
         cameraMovement.transform.position = new Vector3(generationManager.PlayerBasePosition.x, 0, generationManager.PlayerBasePosition.y);
+    
+        mapCamera.orthographicSize = gameConfig.WorldSize / 2;
     }
 }

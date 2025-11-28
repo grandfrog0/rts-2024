@@ -5392,6 +5392,89 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708460400}
   m_CullTransparentMesh: 1
+--- !u!1 &712184594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 712184595}
+  - component: {fileID: 712184597}
+  m_Layer: 0
+  m_Name: Map Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &712184595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712184594}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 140.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1100546317}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!20 &712184597
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712184594}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.36042005, g: 0.5475103, b: 0.8415094, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 1000
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 8400000, guid: 1da7146a25ae9a14bad52e9e0c77ba62, type: 2}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &712384128
 GameObject:
   m_ObjectHideFlags: 0
@@ -7377,7 +7460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1097610075}
   - component: {fileID: 1097610077}
-  - component: {fileID: 1097610076}
+  - component: {fileID: 1097610078}
   m_Layer: 0
   m_Name: Map Texture
   m_TagString: Untagged
@@ -7404,7 +7487,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 175, y: 175}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1097610076
+--- !u!222 &1097610077
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097610074}
+  m_CullTransparentMesh: 1
+--- !u!114 &1097610078
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7413,7 +7504,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1097610074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -7424,24 +7515,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1097610077
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1097610074}
-  m_CullTransparentMesh: 1
+  m_Texture: {fileID: 8400000, guid: 1da7146a25ae9a14bad52e9e0c77ba62, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &1100546316
 GameObject:
   m_ObjectHideFlags: 0
@@ -7474,6 +7554,7 @@ Transform:
   - {fileID: 1189306414}
   - {fileID: 972226013}
   - {fileID: 1917368385}
+  - {fileID: 712184595}
   - {fileID: 1866490904}
   - {fileID: 1529000812}
   - {fileID: 1039549972}
@@ -8168,6 +8249,7 @@ GameObject:
   - component: {fileID: 1189306417}
   - component: {fileID: 1189306415}
   - component: {fileID: 1189306416}
+  - component: {fileID: 1189306420}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -8223,7 +8305,6 @@ MonoBehaviour:
   worker: {fileID: 5209728340417000431, guid: e2d361d46eb2a474da958c76590175b6, type: 3}
   archer: {fileID: 1861785189790964152, guid: 822451c3cfcd85c418c521a0c60f16ac, type: 3}
   titleText: {fileID: 5836148959478801068, guid: 14fae2818ee50704fb10ef9d442d6080, type: 3}
-  unitsParent: {fileID: 1039549972}
   uiParent: {fileID: 152500668}
 --- !u!114 &1189306417
 MonoBehaviour:
@@ -8254,6 +8335,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   generationManager: {fileID: 1189306417}
   cameraMovement: {fileID: 871433683}
+  spawner: {fileID: 1189306420}
+  mapCamera: {fileID: 712184597}
 --- !u!114 &1189306419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8267,6 +8350,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraMovement: {fileID: 871433683}
+--- !u!114 &1189306420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189306413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b13ec4115ddb0e46b60913a24d0487b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitParent: {fileID: 1039549972}
 --- !u!1 &1209288113
 GameObject:
   m_ObjectHideFlags: 0
@@ -11107,6 +11203,7 @@ GameObject:
   - component: {fileID: 1575044838}
   - component: {fileID: 1575044837}
   - component: {fileID: 1575044836}
+  - component: {fileID: 1575044839}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -11282,6 +11379,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575044834}
   m_CullTransparentMesh: 1
+--- !u!114 &1575044839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575044834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19f7bfafe3a330b4384ab2eb9b1ae0ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minValue: 2500
+  maxValue: 10000
 --- !u!1 &1603927857
 GameObject:
   m_ObjectHideFlags: 0
@@ -13546,6 +13657,7 @@ GameObject:
   - component: {fileID: 1866490907}
   - component: {fileID: 1866490906}
   - component: {fileID: 1866490905}
+  - component: {fileID: 1866490908}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -13563,7 +13675,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1000, y: 0.1, z: 1000}
+  m_LocalScale: {x: 2000, y: 0.1, z: 2000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1100546317}
@@ -13639,6 +13751,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866490903}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1866490908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866490903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 960ab7a52e8ba1d4ea0d5f5d6c567d69, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1872459276
 GameObject:
   m_ObjectHideFlags: 0
