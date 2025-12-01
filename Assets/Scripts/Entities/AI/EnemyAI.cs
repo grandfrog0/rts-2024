@@ -8,13 +8,12 @@ public class EnemyAI : MonoBehaviour
     private Unit _unit;
     private Transform _target;
 
-    private void Start()
+    private void Awake()
     {
         _unit = GetComponent<Unit>();
     }
     private void OnTriggerStay(Collider coll)
     {
-        Debug.Log(coll.TryGetComponent(out Unit _));
         if ((_target == null || Vector3.Distance(transform.position, _target.position) > Vector3.Distance(transform.position, coll.transform.position) || _target == coll.gameObject) &&
             coll.TryGetComponent(out Unit other) && other.TeamID != _unit.TeamID)
         {
