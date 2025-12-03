@@ -4,6 +4,9 @@ using UnityEngine;
 
 public abstract class Entity : MonoBehaviour
 {
+    [SerializeField] float _size = 7.5f;
+    public float Size => _size;
+
     private int _teamID = -1;
     public int TeamID
     {

@@ -516,6 +516,7 @@ GameObject:
   - component: {fileID: 2533295618760028897}
   - component: {fileID: 5121486534883806477}
   - component: {fileID: 1141734573966880190}
+  - component: {fileID: 298770233904744195}
   m_Layer: 6
   m_Name: Villager
   m_TagString: Untagged
@@ -640,6 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a43905eba40f4d4db266368ebcf13ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _size: 7.5
 --- !u!135 &2533295618760028897
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -700,6 +702,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!136 &298770233904744195
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5209728340417000431}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.3038086
+  m_Height: 5.207617
+  m_Direction: 1
+  m_Center: {x: -0, y: 2.6625273, z: -0}
 --- !u!1 &5618342900093280139
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,4 @@ using UnityEngine;
 
 public class StaticResourceObject : MonoBehaviour
 {
-    private void Start()
-    {
-    }
 }
