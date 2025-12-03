@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1734693315051835776}
   - component: {fileID: 4358199234350678336}
   - component: {fileID: 2481741738556305708}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Priest
   m_TagString: Untagged
   m_Icon: {fileID: 0}

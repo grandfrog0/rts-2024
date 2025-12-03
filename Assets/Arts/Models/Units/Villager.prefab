@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 2533295618760028897}
   - component: {fileID: 5121486534883806477}
   - component: {fileID: 1141734573966880190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Villager
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -2869,7 +2869,7 @@ GameObject:
   - component: {fileID: 3928290521851066025}
   - component: {fileID: -7820373271157447542}
   - component: {fileID: 120120507516054184}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: town_center_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

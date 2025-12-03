@@ -259,7 +259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 234116858038731193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Storage Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

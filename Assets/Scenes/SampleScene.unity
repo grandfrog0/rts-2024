@@ -206,6 +206,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1232805603206608419, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1232805603206608419, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1232805603206608419, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1897377632}
+    - target: {fileID: 1232805603206608419, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1232805603206608419, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMusicChanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1232805603206608419, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1232805603206608419, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8649689933176421871, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
       propertyPath: m_Name
       value: Toggle
@@ -1810,7 +1838,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 181082715}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 524800762}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1897377632}
+        m_TargetAssemblyTypeName: SettingsLoader, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &181082715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2343,6 +2395,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5565992280039493103, guid: 6a10f6cce09795a41a8d1f6750fe63f5, type: 3}
   m_PrefabInstance: {fileID: 211051887}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &215714551 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2297343740674420216, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+  m_PrefabInstance: {fileID: 4299258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505e5b0542216b4408e4c2505ecbf75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &228030607
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,12 +3536,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 339591116}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 50
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1897377632}
+        m_TargetAssemblyTypeName: SettingsLoader, Assembly-CSharp
+        m_MethodName: OnVolumeChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &367645701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4634,7 +4709,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524800762}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
@@ -9330,6 +9405,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7583e342ae7ce7743863d8516833bdda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1202309089
 GameObject:
   m_ObjectHideFlags: 0
@@ -9577,6 +9655,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 450416528116790628, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
   m_PrefabInstance: {fileID: 1883090685514455652}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1211295527 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2297343740674420216, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+  m_PrefabInstance: {fileID: 1883090685514455652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505e5b0542216b4408e4c2505ecbf75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1253978757
 GameObject:
   m_ObjectHideFlags: 0
@@ -9871,6 +9960,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1897377632}
+        m_TargetAssemblyTypeName: SettingsLoader, Assembly-CSharp
+        m_MethodName: HandleUI
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10678,6 +10779,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1897377632}
+        m_TargetAssemblyTypeName: SettingsLoader, Assembly-CSharp
+        m_MethodName: Clear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 524800762}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -11042,7 +11155,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1897377632}
+        m_TargetAssemblyTypeName: SettingsLoader, Assembly-CSharp
+        m_MethodName: OnScreenSizeChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1370034090
 MonoBehaviour:
@@ -13122,6 +13247,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1897377632}
+        m_TargetAssemblyTypeName: SettingsLoader, Assembly-CSharp
+        m_MethodName: Clear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 524800762}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -15573,6 +15710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1897377631}
+  - component: {fileID: 1897377632}
   m_Layer: 0
   m_Name: SYSTEM
   m_TagString: Untagged
@@ -15597,6 +15735,27 @@ Transform:
   - {fileID: 1075033369}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1897377632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897377630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127b58fa10930cb4c8351b5d96a16c0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenSizes:
+  - {x: 1280, y: 720}
+  - {x: 1366, y: 768}
+  - {x: 1600, y: 900}
+  - {x: 1920, y: 1080}
+  screenSizeDropdown: {fileID: 1370034089}
+  windowModeToggle: {fileID: 1211295527}
+  musicToggle: {fileID: 215714551}
+  volumeSlider: {fileID: 366934067}
 --- !u!1 &1917368384
 GameObject:
   m_ObjectHideFlags: 0
@@ -17156,6 +17315,34 @@ PrefabInstance:
     - target: {fileID: 450416528116790628, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1232805603206608419, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1232805603206608419, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1232805603206608419, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1897377632}
+    - target: {fileID: 1232805603206608419, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1232805603206608419, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnWindowModeChanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1232805603206608419, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1232805603206608419, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8649689933176421871, guid: c04702cd0d469ca44927f03c27f6593a, type: 3}
       propertyPath: m_Name

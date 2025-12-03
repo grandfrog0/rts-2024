@@ -97,7 +97,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3928290521851066025}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: temple_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

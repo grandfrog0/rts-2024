@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class ResourceGenerator : MonoBehaviour
@@ -36,7 +37,6 @@ public class ResourceGenerator : MonoBehaviour
                     continue;
 
                 GameObject resource = _map[x, y] > threshold + 0.075f ? rockPrefab : treePrefab;
-
                 Instantiate(resource, new Vector3(x - _worldSize / 2, 0, y - _worldSize / 2), Quaternion.Euler(0, Random.Range(0, 360), 0), resourcesParent);
             }
         }

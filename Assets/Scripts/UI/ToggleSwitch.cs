@@ -19,9 +19,12 @@ public class ToggleSwitch : MonoBehaviour
         set
         {
             _isOn = value;
-            _text.text = _isOn ? "ON" : "OFF";
-            _checkmarkImage.sprite = _isOn ? _spriteOn : _spriteOff;
-            StartCoroutine(AnimationRoutine(_isOn));
+            if (isActiveAndEnabled)
+            {
+                _text.text = _isOn ? "ON" : "OFF";
+                _checkmarkImage.sprite = _isOn ? _spriteOn : _spriteOff;
+                StartCoroutine(AnimationRoutine(_isOn));
+            }
         }
     }
 
@@ -38,7 +41,7 @@ public class ToggleSwitch : MonoBehaviour
         _checkmark.anchoredPosition = targetPosition;
     }
 
-    private void Start()
+    private void Awake()
     {
         _checkmarkImage = _checkmark.GetComponent<Image>();
 
