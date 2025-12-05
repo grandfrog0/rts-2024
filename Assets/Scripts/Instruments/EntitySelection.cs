@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class EntitySelection : MonoBehaviour
 {
+    [SerializeField] UnityEvent<HashSet<Entity>> onSelectionChanged = new();
+
     [SerializeField] LayerMask objectLayerMask;
     [SerializeField] LayerMask floorLayerMask;
     [SerializeField] GameObject selectionPrefab;
@@ -33,6 +36,8 @@ public class EntitySelection : MonoBehaviour
         {
             _selectedEntities.Add(entity);
         }
+
+        onSelectionChanged.Invoke(_selectedEntities);
 
         HandleSelected();
     }

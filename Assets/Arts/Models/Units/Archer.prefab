@@ -139,6 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a43905eba40f4d4db266368ebcf13ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 10
+  Icon: {fileID: 21300000, guid: 18b3e586b942b6548bb07ff2451b8535, type: 3}
+  Name: Archer
   _size: 7.5
 --- !u!114 &7418628164499674335
 MonoBehaviour:

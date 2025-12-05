@@ -641,6 +641,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a43905eba40f4d4db266368ebcf13ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 13
+  Icon: {fileID: 21300000, guid: 2d9f93e1c80a5fa4aaaa6a3e0dfeb5d3, type: 3}
+  Name: Villager
   _size: 7.5
 --- !u!135 &2533295618760028897
 SphereCollider:

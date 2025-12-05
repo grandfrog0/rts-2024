@@ -16,8 +16,9 @@ public class Unit : Entity
         _targetMovement.SetTarget(targetEnemy.transform.position);
     }
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         _targetMovement = GetComponent<TargetMovement>();
     }
 }
