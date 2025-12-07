@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 3604492696585987947}
   - component: {fileID: 3612712517200544251}
   - component: {fileID: 8087307220131851186}
+  - component: {fileID: 4349876853658516188}
   m_Layer: 0
   m_Name: model_uncollected
   m_TagString: Untagged
@@ -129,3 +130,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7f5f23b75213f4887817d676968306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!205 &4349876853658516188
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3635314921877729025}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0067920126
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 3612712517200544251}
+  m_Enabled: 1

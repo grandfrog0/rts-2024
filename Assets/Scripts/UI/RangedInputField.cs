@@ -15,7 +15,11 @@ public class RangedInputField : MonoBehaviour
     }
     public void OnValueChanged(string value)
     {
+        if (value.Length > 6)
+            value = value.Substring(0, 6);
+
         if (int.TryParse(value, out int v))
             _inputfield.text = Mathf.Clamp(v, minValue, maxValue).ToString();
+        Debug.Log(v);
     }
 }
