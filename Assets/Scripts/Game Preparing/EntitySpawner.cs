@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EntitySpawner : MonoBehaviour
 {
@@ -12,10 +14,12 @@ public class EntitySpawner : MonoBehaviour
     {
         Entity e = Instantiate(entity, position, rotation, _instance.unitParent);
         e.TeamID = teamID;
+
         return e;
     }
 
     [SerializeField] Transform unitParent;
+    [SerializeField] LayerMask floorMask;
     public void Initialize()
     {
         if (_instance == null)

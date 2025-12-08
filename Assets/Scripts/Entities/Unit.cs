@@ -15,6 +15,11 @@ public class Unit : Entity
         _targetEnemy = targetEnemy;
         _targetMovement.SetTarget(targetEnemy.transform.position);
     }
+    public void SetTarget(Vector3 targetPosition)
+    {
+        _targetEnemy = null;
+        _targetMovement.SetTarget(targetPosition);
+    }
 
     protected override void Start()
     {

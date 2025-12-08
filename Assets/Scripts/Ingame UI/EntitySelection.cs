@@ -95,26 +95,26 @@ public class EntitySelection : MonoBehaviour
             //Debug.Log(string.Join("; ", corners));
 
             Vector3 halfExtents = corners[2] - corners[0];
-            Vector3 center = corners[0] + halfExtents / 2;
-            halfExtents.y = 10;
-            center.y = 0;
-            //Debug.Log(center + "; " + halfExtents);
 
-            bool isSelectionChanged = false;
-
-            Collider[] colliders = Physics.OverlapBox(center, halfExtents, Quaternion.identity, objectLayerMask, QueryTriggerInteraction.Ignore);
-            foreach(Collider collider in new HashSet<Collider>(colliders))
+            if (halfExtents.magnitude > 0.25f)
             {
-                //Debug.Log(collider);
-                if (collider.TryGetComponent(out Entity entity))
-                {
-                    HandleObjectClick(entity, false, true);
-                    isSelectionChanged = true;
-                }
-            }
+                Vector3 center = corners[0] + halfExtents / 2;
+                halfExtents.y = 10;
+                center.y = 0;
+                Debug.Log(center + "; " + halfExtents);
 
-            if (isSelectionChanged)
+                Collider[] colliders = Physics.OverlapBox(center, halfExtents, Quaternion.identity, objectLayerMask, QueryTriggerInteraction.Ignore);
+                foreach (Collider collider in new HashSet<Collider>(colliders))
+                {
+                    //Debug.Log(collider);
+                    if (collider.TryGetComponent(out Entity entity))
+                    {
+                        HandleObjectClick(entity, false, true);
+                    }
+                }
+
                 onSelectionChanged.Invoke(_selectedEntities);
+            }
 
             // clear
             selectionField.sizeDelta = Vector2.zero;
@@ -135,6 +135,7 @@ public class EntitySelection : MonoBehaviour
                 if (hit.collider.TryGetComponent(out Entity entity))
                 {
                     HandleObjectClick(entity, revertSelected: true, multipleChoice: multipleChoice);
+                    onSelectionChanged.Invoke(_selectedEntities);
                     return;
                 }
             }
@@ -143,6 +144,7 @@ public class EntitySelection : MonoBehaviour
             {
                 ClearSelected();
             }
+            onSelectionChanged.Invoke(_selectedEntities);
         }
     }
     

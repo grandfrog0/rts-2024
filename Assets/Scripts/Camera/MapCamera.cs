@@ -7,5 +7,6 @@ public class MapCamera : MonoBehaviour
     public void Init(GenerationData data)
     {
         cam.orthographicSize = data.WorldSize / 2;
+        // TODO: spawn bases circles;
     }
 }
