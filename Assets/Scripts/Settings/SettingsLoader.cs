@@ -13,10 +13,10 @@ public class SettingsLoader : MonoBehaviour
     [SerializeField] ToggleSwitch musicToggle;
     [SerializeField] Slider volumeSlider;
 
-    private int _screenSize;
-    private bool _isWindowed;
-    private bool _isMusicOn;
-    private float _volume;
+    private int _screenSize = 0;
+    private bool _isWindowed = false;
+    private bool _isMusicOn = true;
+    private float _volume = 0.5f;
 
     public void Load()
     {
@@ -45,6 +45,11 @@ public class SettingsLoader : MonoBehaviour
         _isWindowed = false;
         _isMusicOn = true;
         _volume = 0.5f;
+
+        //screenSizeDropdown.value = _screenSize;
+        //windowModeToggle.IsOn = _isWindowed;
+        //musicToggle.IsOn = _isMusicOn;
+        //volumeSlider.value = _volume;
     }
 
     public void OnScreenSizeChanged(int value)

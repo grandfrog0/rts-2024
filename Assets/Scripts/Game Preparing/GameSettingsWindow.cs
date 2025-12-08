@@ -23,7 +23,6 @@ public class GameSettingsWindow : MonoBehaviour
     {
         GameConfig gameConfig = GetConfig();
         gamePreparer.Prepare(gameConfig);
-        Debug.Log(gameConfig.WorldSize);
     }
     private GameConfig GetConfig()
     {

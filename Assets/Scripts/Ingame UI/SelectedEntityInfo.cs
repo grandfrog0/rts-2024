@@ -9,10 +9,13 @@ using UnityEngine.UI;
 public class SelectedEntityInfo : MonoBehaviour
 {
     [SerializeField] GameObject entityInfoWindow, entitiesInfoWindow;
-    // enity
+    // entity
     [SerializeField] Image entityImage, entityHealthBar;
     [SerializeField] TMP_Text entityTitle, entityHealthBarText;
     private Entity _curEntity;
+    // entities
+    [SerializeField] EntityInfoMini entityInfoMini;
+    private List<EntityInfoMini> _entities = new();
 
     public void OnEntityChanged(HashSet<Entity> entities)
     {
@@ -32,13 +35,40 @@ public class SelectedEntityInfo : MonoBehaviour
 
     public void SetEntities(HashSet<Entity> entities)
     {
-        entityInfoWindow.SetActive(false);
+        UnloadEntity();
+        ClearEntities();
         entitiesInfoWindow.SetActive(true);
+
+        Debug.Log(string.Join("; ", entities));
+        foreach(var entity in entities)
+        {
+            EntityInfoMini info = Instantiate(entityInfoMini, entitiesInfoWindow.transform);
+            info.Icon.sprite = entity.Icon;
+            info.HealthBar.fillAmount = entity.Health / entity.MaxHealth;
+            _entities.Add(info);
+        }
+    }
+    private void UnloadEntities()
+    {
+        entitiesInfoWindow.SetActive(false);
+        ClearEntities();
+    }
+    private void ClearEntities()
+    {
+        foreach (EntityInfoMini entity in _entities)
+        {
+            Destroy(entity.gameObject);
+        }
+        _entities.Clear();
+    }
+    private void UnloadEntity()
+    {
+        entityInfoWindow.SetActive(false);
     }
 
     public void SetEntity(Entity entity)
     {
-        entitiesInfoWindow.SetActive(false);
+        UnloadEntities();
         entityInfoWindow.SetActive(true);
 
         if (_curEntity && _curEntity != entity)

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -36,8 +37,6 @@ public class EntitySelection : MonoBehaviour
         {
             _selectedEntities.Add(entity);
         }
-
-        onSelectionChanged.Invoke(_selectedEntities);
 
         HandleSelected();
     }
@@ -93,23 +92,29 @@ public class EntitySelection : MonoBehaviour
             for (int i = 0; i < corners.Length; i++)
                 corners[i] = ScreenToWorldPoint(corners[i]).Value;
 
-            Debug.Log(string.Join("; ", corners));
+            //Debug.Log(string.Join("; ", corners));
 
             Vector3 halfExtents = corners[2] - corners[0];
             Vector3 center = corners[0] + halfExtents / 2;
             halfExtents.y = 10;
             center.y = 0;
-            Debug.Log(center + "; " + halfExtents);
+            //Debug.Log(center + "; " + halfExtents);
+
+            bool isSelectionChanged = false;
 
             Collider[] colliders = Physics.OverlapBox(center, halfExtents, Quaternion.identity, objectLayerMask, QueryTriggerInteraction.Ignore);
-            foreach(Collider collider in colliders)
+            foreach(Collider collider in new HashSet<Collider>(colliders))
             {
-                Debug.Log(collider);
+                //Debug.Log(collider);
                 if (collider.TryGetComponent(out Entity entity))
                 {
                     HandleObjectClick(entity, false, true);
+                    isSelectionChanged = true;
                 }
             }
+
+            if (isSelectionChanged)
+                onSelectionChanged.Invoke(_selectedEntities);
 
             // clear
             selectionField.sizeDelta = Vector2.zero;

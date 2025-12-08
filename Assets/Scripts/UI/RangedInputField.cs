@@ -20,6 +20,5 @@ public class RangedInputField : MonoBehaviour
 
         if (int.TryParse(value, out int v))
             _inputfield.text = Mathf.Clamp(v, minValue, maxValue).ToString();
-        Debug.Log(v);
     }
 }
