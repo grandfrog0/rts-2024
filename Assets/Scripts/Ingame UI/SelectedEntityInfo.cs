@@ -39,7 +39,6 @@ public class SelectedEntityInfo : MonoBehaviour
         ClearEntities();
         entitiesInfoWindow.SetActive(true);
 
-        Debug.Log(string.Join("; ", entities));
         foreach(var entity in entities)
         {
             EntityInfoMini info = Instantiate(entityInfoMini, entitiesInfoWindow.transform);

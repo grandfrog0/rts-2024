@@ -12,7 +12,9 @@ public class TargetMovement : MonoBehaviour
     public void SetTarget(Vector3 position)
     {
         if (_agent.isOnNavMesh)
+        {
             _agent.destination = position;
+        }
         else
         {
             Debug.Log("Is not on NavMesh!");

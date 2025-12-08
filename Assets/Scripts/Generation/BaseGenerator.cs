@@ -18,7 +18,7 @@ public class BaseGenerator : MonoBehaviour
     private List<Vector2> _basesPositions = new();
     public List<Vector2> BasesPosition => _basesPositions;
 
-    public void Initialize(GameConfig gameConfig, float baseRange)
+    public void Initialize(GameConfig gameConfig, float baseRange, GenerationData generationData)
     {
         _worldSize = gameConfig.WorldSize;
         _basesNames = new() { gameConfig.PlayerData.Name };
@@ -28,6 +28,9 @@ public class BaseGenerator : MonoBehaviour
 
         GenerateBases();
         SpawnBases();
+
+        generationData.PlayerBase = _basesPositions[0];
+        generationData.EnemyBases = _basesPositions.GetRange(1, _basesPositions.Count - 1);
     }
     private void GenerateBases()
     {

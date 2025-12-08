@@ -9,9 +9,14 @@ public class GenerationManager : MonoBehaviour
     [SerializeField] BaseGenerator baseGenerator;
     public int WorldSize { get; set; }
     public Vector2 PlayerBasePosition => baseGenerator.BasesPosition[0];
-    public void StartGeneration(GameConfig gameConfig)
+    public GenerationData StartGeneration(GameConfig gameConfig)
     {
-        baseGenerator.Initialize(gameConfig, baseRange);
+        GenerationData data = new GenerationData();
+        data.WorldSize = gameConfig.WorldSize;
+
+        baseGenerator.Initialize(gameConfig, baseRange, data);
         resourceGenerator.Initialize(WorldSize, baseGenerator.BasesPosition, baseRange);
+
+        return data;
     }
 }
