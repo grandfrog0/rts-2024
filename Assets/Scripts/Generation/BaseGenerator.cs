@@ -59,14 +59,16 @@ public class BaseGenerator : MonoBehaviour
             position = _basesPositions[i];
             title = _basesNames[i];
 
-            EntitySpawner.Spawn(townHall, new Vector3(position.x, 1, position.y), Quaternion.Euler(0, 180, 0), i);
+            Quaternion rotation = Quaternion.Euler(0, 180, 0);
 
-            EntitySpawner.Spawn(worker, new Vector3(position.x - 2, 0, position.y - 3), Quaternion.identity, i);
-            EntitySpawner.Spawn(worker, new Vector3(position.x - 1, 0, position.y - 3), Quaternion.identity, i);
-            EntitySpawner.Spawn(worker, new Vector3(position.x, 0, position.y - 3), Quaternion.identity, i);
+            EntitySpawner.Spawn(townHall, new Vector3(position.x, 1, position.y), rotation, i);
+
+            EntitySpawner.Spawn(worker, new Vector3(position.x - 2, 0, position.y - 3), rotation, i);
+            EntitySpawner.Spawn(worker, new Vector3(position.x - 1, 0, position.y - 3), rotation, i);
+            EntitySpawner.Spawn(worker, new Vector3(position.x, 0, position.y - 3), rotation, i);
             
-            EntitySpawner.Spawn(archer, new Vector3(position.x + 1, 0, position.y - 3), Quaternion.identity, i);
-            EntitySpawner.Spawn(archer, new Vector3(position.x + 2, 0, position.y - 3), Quaternion.identity, i);
+            EntitySpawner.Spawn(archer, new Vector3(position.x + 1, 0, position.y - 3), rotation, i);
+            EntitySpawner.Spawn(archer, new Vector3(position.x + 2, 0, position.y - 3), rotation, i);
 
             TMP_Text text = Instantiate(titleText, uiParent);
             text.rectTransform.anchoredPosition = position;

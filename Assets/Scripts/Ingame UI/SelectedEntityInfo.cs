@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class SelectedEntityInfo : MonoBehaviour
 {
-    [SerializeField] GameObject entityInfoWindow, entitiesInfoWindow;
+    [SerializeField] GameObject entityInfoWindow, entitiesInfoWindow, resourcesViewWindow;
     // entity
     [SerializeField] Image entityImage, entityHealthBar;
     [SerializeField] TMP_Text entityTitle, entityHealthBarText;
@@ -19,21 +19,23 @@ public class SelectedEntityInfo : MonoBehaviour
 
     public void OnEntityChanged(HashSet<Entity> entities)
     {
-        if (entities.Count == 0)
+        List<Entity> playerEntities = entities.Where(e => e.TeamID == 0).ToList();
+
+        if (playerEntities.Count == 0)
         {
             ClearInterface();
         }
-        else if (entities.Count == 1)
+        else if (playerEntities.Count == 1)
         {
-            SetEntity(entities.First());
+            SetEntity(playerEntities[0]);
         }
         else
         {
-            SetEntities(entities);
+            SetEntities(playerEntities);
         }
     }
 
-    public void SetEntities(HashSet<Entity> entities)
+    public void SetEntities(List<Entity> entities)
     {
         UnloadEntity();
         ClearEntities();
@@ -79,6 +81,8 @@ public class SelectedEntityInfo : MonoBehaviour
         entityImage.sprite = entity.Icon;
         entityTitle.text = entity.Name;
         UpdateEntityHealth();
+
+        resourcesViewWindow.SetActive(entity is Worker);
     }
 
     public void UpdateEntityHealth()

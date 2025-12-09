@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(TargetMovement))]
@@ -7,23 +8,27 @@ public class Unit : Entity
 {
     protected TargetMovement _targetMovement;
 
-    public UnitState State { get; protected set; } = UnitState.Waiting;
-    protected Entity _targetEnemy;
+    public UnitTask CurrentTask { get; protected set; } = UnitTask.None;
+    public UnitTask WaitingTask { get; set; } = UnitTask.None;
 
-    public void SetTarget(Entity targetEnemy)
+    public void SetDestination(Vector3 position)
     {
-        _targetEnemy = targetEnemy;
-        _targetMovement.SetTarget(targetEnemy.transform.position);
+        _targetMovement.SetTarget(position);
+        CurrentTask = UnitTask.Command;
+        Debug.Log("Command got! Current task: " + CurrentTask);
+        WaitingTask = UnitTask.None;
     }
-    public void SetTarget(Vector3 targetPosition)
+
+    private void OnTargetGoaled()
     {
-        _targetEnemy = null;
-        _targetMovement.SetTarget(targetPosition);
+        CurrentTask = UnitTask.None;
+        Debug.Log("Target goaled! Current task: " + CurrentTask);
     }
 
     protected override void Start()
     {
         base.Start();
         _targetMovement = GetComponent<TargetMovement>();
+        _targetMovement.onTargetCompleted = OnTargetGoaled;
     }
 }

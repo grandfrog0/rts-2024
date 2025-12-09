@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EntityDirector : MonoBehaviour
 {
-    private HashSet<Unit> units = new HashSet<Unit>();
+    private List<Unit> units = new List<Unit>();
 
     public void OnSelectionChanged(HashSet<Entity> entities)
     {
-        units.Clear();
         foreach (Entity entity in entities)
         {
             if (entity is Unit unit)
@@ -16,16 +16,13 @@ public class EntityDirector : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void UpdateDestination()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Floor"), QueryTriggerInteraction.Ignore))
         {
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Floor"), QueryTriggerInteraction.Ignore))
-            {
-                Debug.Log(hit.point);
-                foreach (Unit unit in units)
-                    unit.SetTarget(hit.point);
-            }
+            foreach (Unit unit in units)
+                if (unit.CurrentTask == UnitTask.None && unit.WaitingTask == UnitTask.Command)
+                    unit.SetDestination(hit.point);
         }
     }
 }

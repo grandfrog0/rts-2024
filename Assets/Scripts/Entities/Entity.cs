@@ -13,7 +13,7 @@ public abstract class Entity : MonoBehaviour
 
     public Sprite Icon;
     public string Name;
-    [SerializeField] float _size = 7.5f;
+    [SerializeField] float _size = 1f;
     public float Size => _size;
     private int _teamID = -1;
     public int TeamID

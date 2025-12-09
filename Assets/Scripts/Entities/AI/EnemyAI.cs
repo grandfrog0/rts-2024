@@ -12,13 +12,14 @@ public class EnemyAI : MonoBehaviour
     {
         _unit = GetComponent<Unit>();
     }
-    private void OnTriggerStay(Collider coll)
+    //private void OnTriggerStay(Collider coll)
+    private void OnTriggerEnter(Collider coll)
     {
         if ((_target == null || Vector3.Distance(transform.position, _target.position) > Vector3.Distance(transform.position, coll.transform.position) || _target == coll.gameObject) &&
             coll.TryGetComponent(out Unit other) && other.TeamID != _unit.TeamID)
         {
             _target = coll.transform;
-            _unit.SetTarget(other);
+            _unit.SetDestination(other.transform.position);
         }
     }
     private void OnTriggerExit(Collider other)

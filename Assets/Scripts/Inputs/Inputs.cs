@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Inputs : MonoBehaviour
 {
+    [SerializeField] UnityEvent onMouse0Down;
+    [SerializeField] UnityEvent onMouse0Up;
+    [SerializeField] UnityEvent onMouse0;
+
+    [SerializeField] UnityEvent onMouse1Down;
+
     [SerializeField] CameraMovement cameraMovement;
     private void Update()
     {
@@ -15,5 +22,12 @@ public class Inputs : MonoBehaviour
         {
             cameraMovement.AddZoom(scrollValue);
         }
+
+        if (Input.GetMouseButtonDown(0))
+            onMouse0Down.Invoke();
+        if (Input.GetMouseButtonUp(0))
+            onMouse0Up.Invoke();
+        if (Input.GetMouseButton(0))
+            onMouse0.Invoke();
     }
 }
