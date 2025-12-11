@@ -9,8 +9,6 @@ public class Inputs : MonoBehaviour
     [SerializeField] UnityEvent onMouse0Up;
     [SerializeField] UnityEvent onMouse0;
 
-    [SerializeField] UnityEvent onMouse1Down;
-
     [SerializeField] CameraMovement cameraMovement;
     private void Update()
     {

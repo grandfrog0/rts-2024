@@ -8,5 +8,8 @@ public class MapCamera : MonoBehaviour
     {
         cam.orthographicSize = data.WorldSize / 2;
         // TODO: spawn bases circles;
+
+        //cam.targetTexture = null;
+        //gameObject.SetActive(false);
     }
 }

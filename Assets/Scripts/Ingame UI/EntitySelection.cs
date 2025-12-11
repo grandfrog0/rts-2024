@@ -41,7 +41,15 @@ public class EntitySelection : MonoBehaviour
 
     private void ClearSelected()
     {
+        //Entity first = null;
+        //if (_selectedEntities.Count == 1)
+        //    first = _selectedEntities.First();
+
         _selectedEntities.Clear();
+
+        //if (first != null && first == UnitTaskManager.SelectedUnit && UnitTaskManager.IsAppliedNow)
+        //    _selectedEntities.Add(first);
+
         onSelectionChanged.Invoke(_selectedEntities);
     }
 

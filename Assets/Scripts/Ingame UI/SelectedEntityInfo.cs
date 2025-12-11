@@ -46,6 +46,7 @@ public class SelectedEntityInfo : MonoBehaviour
             EntityInfoMini info = Instantiate(entityInfoMini, entitiesInfoWindow.transform);
             info.Icon.sprite = entity.Icon;
             info.HealthBar.fillAmount = entity.Health / entity.MaxHealth;
+            info.Subscribe(entity);
             _entities.Add(info);
         }
     }
@@ -56,9 +57,10 @@ public class SelectedEntityInfo : MonoBehaviour
     }
     private void ClearEntities()
     {
-        foreach (EntityInfoMini entity in _entities)
+        foreach (EntityInfoMini info in _entities)
         {
-            Destroy(entity.gameObject);
+            info.Describe();
+            Destroy(info.gameObject);
         }
         _entities.Clear();
     }
@@ -82,7 +84,7 @@ public class SelectedEntityInfo : MonoBehaviour
         entityTitle.text = entity.Name;
         UpdateEntityHealth();
 
-        resourcesViewWindow.SetActive(entity is Worker);
+        resourcesViewWindow.SetActive(entity is Builder);
     }
 
     public void UpdateEntityHealth()

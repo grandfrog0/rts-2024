@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class MouseTaskManager : MonoBehaviour
 {
-    private static MouseTaskManager _instance;
+    private static global::MouseTaskManager _instance;
 
-    private static MouseTask _currentTask = null;
+    private static MouseTask _currentTask;
     public static MouseTask CurrentTask
     {
         get => _currentTask;
@@ -17,7 +17,6 @@ public class MouseTaskManager : MonoBehaviour
             _currentTask = value;
 
             Texture2D texture = _currentTask == null || _currentTask.Sprite == null || _currentTask.Sprite.texture == null ? null : _currentTask.Sprite.texture;
-            Debug.Log(texture);
             Cursor.SetCursor(texture, Vector2.zero, CursorMode.Auto);
         }
     }
@@ -30,6 +29,7 @@ public class MouseTaskManager : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+        CurrentTask = tasks[0];
     }
 
     [Serializable]

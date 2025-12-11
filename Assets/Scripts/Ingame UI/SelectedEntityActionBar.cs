@@ -27,7 +27,7 @@ public class SelectedEntityActionBar : MonoBehaviour
     public void SetEntity(Entity entity)
     {
         mainActionsParent.SetActive(true);
-        buildActionsParent.SetActive(entity is Worker);
+        buildActionsParent.SetActive(entity is Builder);
     }
     public void ClearInterface()
     {

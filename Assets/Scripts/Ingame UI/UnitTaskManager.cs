@@ -8,22 +8,24 @@ using UnityEngine.Events;
 
 public class UnitTaskManager : MonoBehaviour
 {
+    //private static bool _isAppliedNow = false;
+    //public static bool IsAppliedNow { get => _isAppliedNow; set { _isAppliedNow = value; Debug.Log(_isAppliedNow); } }
+    public static Unit SelectedUnit { get; private set; }
+    
     [SerializeField] UnityEvent<UnitTask> onUnitTaskChanged = new();
 
     private UnitTask WaitingTask
     {
-        get => _selectedUnit.WaitingTask;
+        get => SelectedUnit.WaitingTask;
         set
         {
-            _selectedUnit.WaitingTask = value;
+            SelectedUnit.WaitingTask = value;
             onUnitTaskChanged.Invoke(value);
         }
     }
-    private Unit _selectedUnit;
-
     public void ToggleTask(string taskName)
     {
-        if (_selectedUnit == null)
+        if (SelectedUnit == null)
             return;
 
         UnitTask task = Enum.Parse<UnitTask>(taskName);
@@ -43,9 +45,9 @@ public class UnitTaskManager : MonoBehaviour
         List<Entity> playerEntitites = entities.Where(e => e.TeamID == 0).ToList();
         if (playerEntitites.Count == 1 && playerEntitites[0] is Unit unit)
         {
-            _selectedUnit = unit;
+            SelectedUnit = unit;
         }
-        else if (playerEntitites.Count == 0 && _selectedUnit != null)
+        else if (playerEntitites.Count == 0 && SelectedUnit != null)
         {
             WaitingTask = UnitTask.None;
         }

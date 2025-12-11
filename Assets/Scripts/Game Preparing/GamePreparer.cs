@@ -9,10 +9,17 @@ public class GamePreparer : MonoBehaviour
     [SerializeField] EntitySpawner spawner;
     [SerializeField] MapCamera mapCamera;
     [SerializeField] Transform floorTransform;
+    [SerializeField] Inventory inventory;
 
     public void Prepare(GameConfig gameConfig)
     {
         spawner.Initialize();
+
+        EntitySpawner.OnUnitsCountChanged.AddListener((int teamID, List<Unit> units) =>
+        {
+            if (teamID == 0)
+                inventory.Init("units", units.Count);
+        });
 
         generationManager.WorldSize = gameConfig.WorldSize;
         GenerationData generationData = generationManager.StartGeneration(gameConfig);
@@ -22,5 +29,6 @@ public class GamePreparer : MonoBehaviour
         mapCamera.Init(generationData);
 
         floorTransform.localScale = new Vector3(gameConfig.WorldSize * 2, floorTransform.localScale.y, gameConfig.WorldSize * 2);
+
     }
 }

@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3052685636030102784, guid: dd35419c88d094b4e9034990127ea82c, type: 3}
+      propertyPath: _attackRange
+      value: 7.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3150234460691057511, guid: dd35419c88d094b4e9034990127ea82c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
