@@ -14,7 +14,18 @@ public class TargetMovement : MonoBehaviour
     private NavMeshAgent _agent;
     private Coroutine _targetUpdate;
 
-    public float Speed { get => _agent.speed; set => _agent.speed = value; }
+    private float _speed;
+    public float Speed
+    {
+        get => _speed;
+        set
+        {
+            _speed = value;
+
+            if (_agent != null) 
+                _agent.speed = value;
+        }
+    }
 
     public void SetTarget(Vector3 position)
     {
@@ -56,5 +67,6 @@ public class TargetMovement : MonoBehaviour
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
+        _agent.speed = Speed;
     }
 }

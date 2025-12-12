@@ -95,7 +95,7 @@ public class Unit : Entity
         base.Init(teamID);
         _targetMovement = GetComponent<TargetMovement>();
         _targetMovement.onTargetGoaled = OnTargetGoaled;
-        Debug.Log(1 + "; " + _targetMovement + ";");
+        Debug.Log(gameObject.name + "; " + _targetMovement + ";");
     }
     private void OnDrawGizmosSelected()
     {
@@ -103,7 +103,7 @@ public class Unit : Entity
     }
     public void Load(SerializableUnit unit)
     {
-        Debug.Log(2 + "; " + _targetMovement + ";");
+        Debug.Log(gameObject.name + "; " + _targetMovement + ";" + unit);
         Name = unit.Name;
         _targetMovement.Speed = unit.MovementSpeed;
         MaxHealth = unit.MaxHealth;
