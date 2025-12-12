@@ -12,7 +12,11 @@ public abstract class Entity : MonoBehaviour
     private bool _isDead = false;
     [SerializeField] float maxHealth;
     private float _health;
-    public float MaxHealth => maxHealth;
+    public float MaxHealth
+    {
+        get => maxHealth;
+        protected set => maxHealth = value;
+    }
     public float Health 
     { 
         get => _health;
@@ -24,9 +28,10 @@ public abstract class Entity : MonoBehaviour
     }
 
     [SerializeField] float _attackStrength = 1;
-    public float AttackStrength => _attackStrength;
-
+    public float AttackStrength { get => _attackStrength; protected set => _attackStrength = value; }
+ 
     [Header("Main information")]
+    public string ConfigName;
     public Sprite Icon;
     public string Name;
     [SerializeField] float _size = 1f;
@@ -35,7 +40,7 @@ public abstract class Entity : MonoBehaviour
     public int TeamID
     {
         get => _teamID;
-        set
+        private set
         {
             if (_enemyAI != null || TryGetComponent(out _enemyAI))
                 _enemyAI.enabled = value != 0;
@@ -45,10 +50,11 @@ public abstract class Entity : MonoBehaviour
     }
 
     private EnemyAI _enemyAI;
-    protected virtual void Start()
+    public virtual void Init(int teamID)
     {
         _enemyAI = GetComponent<EnemyAI>();
         _health = maxHealth;
+        TeamID = teamID;
     }
 
     public void Attack(Entity other)

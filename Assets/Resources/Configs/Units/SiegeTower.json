@@ -1,0 +1,17 @@
+{
+  "Name": "Siege tower",
+  "MovementSpeed": 0,
+  "MaxHealth": 20.0,
+  "TrainingCost": [
+    {
+      "Name": "wood",
+      "Cost": 10
+    }
+  ],
+  "DetectionRange": 0,
+  "MinAttackRange": 2,
+  "MaxAttackRange": 8,
+  "Cooldown": 2,
+  "Damage": 5,
+  "UnitCapacity": 10
+}

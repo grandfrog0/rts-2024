@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -15,15 +16,30 @@ public class EntitySpawner : MonoBehaviour
     public static Entity Spawn(Entity entity, Vector3 position, Quaternion rotation, int teamID = -1)
     {
         Entity e = Instantiate(entity, position, rotation, _instance.unitParent);
-        e.TeamID = teamID;
-
-        //if (!_instance._entities.ContainsKey(teamID))
-        //    _instance._entities[teamID] = new HashSet<Entity>();
-        //_instance._entities[teamID].Add(entity);
-        //entity.OnDead.AddListener(() => _instance._entities[teamID].Remove(entity));
+        e.Init(teamID);
 
         if (entity is Unit unit)
         {
+            if (e.ConfigName != "")
+            {
+                string json = ResourceManager.GetText(e.ConfigName);
+                switch (unit)
+                {
+                    case Builder:
+                        unit.Load(JsonUtility.FromJson<SerializableBuilder>(json));
+                        break;
+
+                    case Archer:
+                        unit.Load(JsonUtility.FromJson<SerializableArcher>(json));
+                        break;
+
+                    default:
+                        unit.Load(JsonUtility.FromJson<SerializableUnit>(json));
+                        break;
+                }
+            }
+
+
             if (!_instance._units.ContainsKey(teamID))
                 _instance._units[teamID] = new List<Unit>();
 
@@ -41,7 +57,6 @@ public class EntitySpawner : MonoBehaviour
 
     [SerializeField] Transform unitParent;
     [SerializeField] LayerMask floorMask;
-    //private Dictionary<int, HashSet<Entity>> _entities;
     private Dictionary<int, List<Unit>> _units = new();
     public void Initialize()
     {

@@ -1,0 +1,16 @@
+{
+  "Name": "Healer",
+  "MovementSpeed": 3.0,
+  "MaxHealth": 12.0,
+  "TrainingCost": [
+    {
+      "Name": "wood",
+      "Cost": 10
+    }
+  ],
+  "DetectionRange": 37.5,
+  "MinAttackRange": 0,
+  "MaxAttackRange": 6,
+  "Cooldown": 1,
+  "Damage": 1.0
+}

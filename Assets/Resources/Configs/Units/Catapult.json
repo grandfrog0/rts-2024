@@ -1,0 +1,16 @@
+{
+  "Name": "Catapult",
+  "MovementSpeed": 0,
+  "MaxHealth": 20.0,
+  "TrainingCost": [
+    {
+      "Name": "wood",
+      "Cost": 10
+    }
+  ],
+  "DetectionRange": 0,
+  "MinAttackRange": 3,
+  "MaxAttackRange": 35,
+  "Cooldown": 2,
+  "Damage": 2.0
+}

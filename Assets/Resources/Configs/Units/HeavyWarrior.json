@@ -1,0 +1,16 @@
+{
+  "Name": "Heavy warrior",
+  "MovementSpeed": 3.5,
+  "MaxHealth": 18.0,
+  "TrainingCost": [
+    {
+      "Name": "wood",
+      "Cost": 10
+    }
+  ],
+  "DetectionRange": 32.5,
+  "MinAttackRange": 0,
+  "MaxAttackRange": 1.25,
+  "Cooldown": 1,
+  "Damage": 3.0
+}

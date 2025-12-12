@@ -1,0 +1,15 @@
+{
+  "Name": "Builder",
+  "MovementSpeed": 3.5,
+  "MaxHealth": 10.0,
+  "TrainingCost": [
+    {
+      "Name": "wood",
+      "Cost": 10
+    }
+  ],
+  "DetectionRange": 30,
+  "MineSpeed": 1,
+  "RepairSpeed": 1,
+  "RepairEffeciency": 1
+}

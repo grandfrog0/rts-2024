@@ -96,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 13
   _attackStrength: 1
+  ConfigName: Builder
   Icon: {fileID: 21300000, guid: 2d9f93e1c80a5fa4aaaa6a3e0dfeb5d3, type: 3}
   Name: Worker
   _size: 1

@@ -1,26 +1,36 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 [RequireComponent(typeof(TargetMovement))]
 public class Unit : Entity
 {
+    // Characteristics
     [SerializeField] float _attackRange = 1;
-    public float AttackRange => _attackRange;
+    public float MaxAttackRange { get => _attackRange; protected set => _attackRange = value; }
+    public float MinAttackDistance { get; protected set; }
     [SerializeField] float _cooldown = 1;
-    public float Cooldown => _cooldown;
+    public float Cooldown { get => _cooldown; protected set => _cooldown = value; }
+
+    // CD
     public bool InCooldown { get; private set; }
     private Coroutine _attackRoutine;
     private Entity _attackTarget;
 
-    protected TargetMovement _targetMovement;
+    // Misc
+    public List<TrainingCost> TrainingCost { get; set; }
+    public float DetectionRange { get; set; }
 
+    // Tasks
     public UnitTask CurrentTask { get; protected set; } = UnitTask.None;
     public UnitTask WaitingTask { get; set; } = UnitTask.None;
 
     // Movement logic
+    protected TargetMovement _targetMovement;
     public void SetDestination(Vector3 position)
     {
         _targetMovement.SetTarget(position);
@@ -64,7 +74,7 @@ public class Unit : Entity
                 yield break;
             }
 
-            if (Vector3.Distance(transform.position, _attackTarget.transform.position) < AttackRange)
+            if (Vector3.Distance(transform.position, _attackTarget.transform.position) < MaxAttackRange)
             {
                 Attack(_attackTarget);
 
@@ -79,15 +89,25 @@ public class Unit : Entity
         }
     }
 
-    protected override void Start()
+    // Organization
+    public override void Init(int teamID)
     {
-        base.Start();
+        base.Init(teamID);
         _targetMovement = GetComponent<TargetMovement>();
-        _targetMovement.onTargetCompleted = OnTargetGoaled;
+        _targetMovement.onTargetGoaled = OnTargetGoaled;
+        Debug.Log(1 + "; " + _targetMovement + ";");
     }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, _attackRange);
+    }
+    public void Load(SerializableUnit unit)
+    {
+        Debug.Log(2 + "; " + _targetMovement + ";");
+        Name = unit.Name;
+        _targetMovement.Speed = unit.MovementSpeed;
+        MaxHealth = unit.MaxHealth;
+        TrainingCost = unit.TrainingCost;
+        DetectionRange = unit.DetectionRange;
     }
 }

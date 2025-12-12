@@ -1,0 +1,16 @@
+{
+  "Name": "Spearman",
+  "MovementSpeed": 4,
+  "MaxHealth": 10.0,
+  "TrainingCost": [
+    {
+      "Name": "wood",
+      "Cost": 10
+    }
+  ],
+  "DetectionRange": 32.5,
+  "MinAttackRange": 0,
+  "MaxAttackRange": 3,
+  "Cooldown": 1.75,
+  "Damage": 1.0
+}

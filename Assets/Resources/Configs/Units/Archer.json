@@ -1,0 +1,16 @@
+{
+  "Name": "Archer",
+  "MovementSpeed": 3.0,
+  "MaxHealth": 8.0,
+  "TrainingCost": [
+    {
+      "Name": "wood",
+      "Cost": 10
+    }
+  ],
+  "DetectionRange": 37.5,
+  "MinAttackRange": 3,
+  "MaxAttackRange": 7.5,
+  "Cooldown": 1.25,
+  "Damage": 1.0
+}

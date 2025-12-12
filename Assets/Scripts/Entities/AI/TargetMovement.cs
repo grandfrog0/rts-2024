@@ -9,10 +9,12 @@ using UnityEngine.UI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class TargetMovement : MonoBehaviour
 {
-    public Action onTargetCompleted;
+    public Action onTargetGoaled;
 
     private NavMeshAgent _agent;
     private Coroutine _targetUpdate;
+
+    public float Speed { get => _agent.speed; set => _agent.speed = value; }
 
     public void SetTarget(Vector3 position)
     {
@@ -43,8 +45,8 @@ public class TargetMovement : MonoBehaviour
             {
                 _agent.isStopped = true;
 
-                if (onTargetCompleted != null)
-                    onTargetCompleted();
+                if (onTargetGoaled != null)
+                    onTargetGoaled();
 
                 yield break;
             }

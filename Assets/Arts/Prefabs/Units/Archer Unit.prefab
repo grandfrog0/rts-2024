@@ -68,19 +68,48 @@ PrefabInstance:
       propertyPath: m_Name
       value: Archer Unit
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3052685636030102784, guid: dd35419c88d094b4e9034990127ea82c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3150234460691057511, guid: dd35419c88d094b4e9034990127ea82c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8632694219190769348}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8404165612679114557, guid: dd35419c88d094b4e9034990127ea82c, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 6543145743590569726}
   m_SourcePrefab: {fileID: 100100000, guid: dd35419c88d094b4e9034990127ea82c, type: 3}
 --- !u!4 &3143936119487263308 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3150234460691057511, guid: dd35419c88d094b4e9034990127ea82c, type: 3}
   m_PrefabInstance: {fileID: 6298773183641899}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8410464244934055446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8404165612679114557, guid: dd35419c88d094b4e9034990127ea82c, type: 3}
+  m_PrefabInstance: {fileID: 6298773183641899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6543145743590569726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8410464244934055446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc1f6c1b5cbbf34087dea382dd1957b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  _attackStrength: 1
+  ConfigName: Archer
+  Icon: {fileID: 21300000, guid: 18b3e586b942b6548bb07ff2451b8535, type: 3}
+  Name: Archer
+  _size: 1
+  _attackRange: 7.5
+  _cooldown: 1
 --- !u!1001 &6142994324039388357
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10152,18 +10152,23 @@ MonoBehaviour:
   invItems:
   - Name: units
     _count: 0
+    IsResource: 0
     _text: {fileID: 1787276629}
   - Name: food
     _count: 0
+    IsResource: 0
     _text: {fileID: 872150184}
   - Name: wood
     _count: 0
+    IsResource: 0
     _text: {fileID: 1523353261}
   - Name: iron
     _count: 0
+    IsResource: 0
     _text: {fileID: 1952155665}
   - Name: stone
     _count: 0
+    IsResource: 0
     _text: {fileID: 465456783}
 --- !u!1 &1202309089
 GameObject:

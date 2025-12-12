@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
             _target = coll.transform;
             _unit.SetDestination(other.transform.position);
             
-            if (colliderDistance <= _unit.AttackRange)
+            if (colliderDistance <= _unit.MaxAttackRange)
             {
                 _unit.SetAttackTarget(other);
             }
