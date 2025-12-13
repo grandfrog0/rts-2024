@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class Entity : MonoBehaviour
+public abstract class Entity : MonoBehaviour, IHurtable
 {
     public UnityEvent OnHealthChanged { get; } = new();
     public UnityEvent OnDead { get; } = new();
@@ -26,6 +26,8 @@ public abstract class Entity : MonoBehaviour
             OnHealthChanged.Invoke();
         }
     }
+    public bool IsAlive => Health > 0;
+    public Vector3 Position => transform.position;
 
     [SerializeField] float _attackStrength = 1;
     public float AttackStrength { get => _attackStrength; protected set => _attackStrength = value; }
@@ -57,7 +59,7 @@ public abstract class Entity : MonoBehaviour
         TeamID = teamID;
     }
 
-    public void Attack(Entity other)
+    public void Attack(IHurtable other)
     {
         other.TakeDamage(_attackStrength, this);
     }

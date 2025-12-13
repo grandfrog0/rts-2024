@@ -58,10 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8404165612679114557, guid: dd35419c88d094b4e9034990127ea82c, type: 3}
       propertyPath: m_Name
-      value: Worker Unit
+      value: Builder Unit
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3052685636030102784, guid: dd35419c88d094b4e9034990127ea82c, type: 3}
+    - {fileID: 1780384459736525161, guid: dd35419c88d094b4e9034990127ea82c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3150234460691057511, guid: dd35419c88d094b4e9034990127ea82c, type: 3}
@@ -98,7 +99,7 @@ MonoBehaviour:
   _attackStrength: 1
   ConfigName: Builder
   Icon: {fileID: 21300000, guid: 2d9f93e1c80a5fa4aaaa6a3e0dfeb5d3, type: 3}
-  Name: Worker
+  Name: Builder
   _size: 1
   _attackRange: 1
   _cooldown: 1

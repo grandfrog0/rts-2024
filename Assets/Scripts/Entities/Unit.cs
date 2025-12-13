@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
@@ -19,7 +20,7 @@ public class Unit : Entity
     // CD
     public bool InCooldown { get; private set; }
     private Coroutine _attackRoutine;
-    private Entity _attackTarget;
+    private IHurtable _attackTarget;
 
     // Misc
     public List<TrainingCost> TrainingCost { get; set; }
@@ -38,17 +39,17 @@ public class Unit : Entity
         WaitingTask = UnitTask.None;
     }
     private void OnTargetGoaled()
+        => ClearCurrentTask();
+
+    public void ClearCurrentTask()
     {
         CurrentTask = UnitTask.None;
     }
 
     // Attack logic
-    public void SetAttackTarget(Entity entity)
+    public void SetAttackTarget(IHurtable target)
     {
-        if (entity.TeamID == TeamID)
-            throw new ArgumentException("Wrong argument: " + entity);
-
-        _attackTarget = entity;
+        _attackTarget = target;
 
         if (_attackRoutine == null)
             _attackRoutine = StartCoroutine(AttackRoutine());
@@ -68,13 +69,14 @@ public class Unit : Entity
     {
         while (true)
         {
-            if (_attackTarget == null || _attackTarget.Health <= 0)
+            if (_attackTarget == null || !_attackTarget.IsAlive)
             {
                 _attackRoutine = null;
                 yield break;
             }
 
-            if (Vector3.Distance(transform.position, _attackTarget.transform.position) < MaxAttackRange)
+            Debug.Log($"{Vector3.Distance(transform.position, _attackTarget.Position)} < {MaxAttackRange}");
+            if (Vector3.Distance(transform.position, _attackTarget.Position) < MaxAttackRange)
             {
                 Attack(_attackTarget);
 
@@ -95,7 +97,6 @@ public class Unit : Entity
         base.Init(teamID);
         _targetMovement = GetComponent<TargetMovement>();
         _targetMovement.onTargetGoaled = OnTargetGoaled;
-        Debug.Log(gameObject.name + "; " + _targetMovement + ";");
     }
     private void OnDrawGizmosSelected()
     {
@@ -103,7 +104,6 @@ public class Unit : Entity
     }
     public void Load(SerializableUnit unit)
     {
-        Debug.Log(gameObject.name + "; " + _targetMovement + ";" + unit);
         Name = unit.Name;
         _targetMovement.Speed = unit.MovementSpeed;
         MaxHealth = unit.MaxHealth;

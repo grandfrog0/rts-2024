@@ -18,19 +18,19 @@ public class EntitySpawner : MonoBehaviour
         Entity e = Instantiate(entity, position, rotation, _instance.unitParent);
         e.Init(teamID);
 
-        if (entity is Unit unit)
+        if (e is Unit unit)
         {
             if (e.ConfigName != "")
             {
                 string json = ResourceManager.GetText(e.ConfigName);
                 switch (unit)
                 {
-                    case Builder:
-                        unit.Load(JsonUtility.FromJson<SerializableBuilder>(json));
+                    case Builder builder:
+                        builder.Load(JsonUtility.FromJson<SerializableBuilder>(json));
                         break;
 
-                    case Archer:
-                        unit.Load(JsonUtility.FromJson<SerializableArcher>(json));
+                    case Archer archer:
+                        archer.Load(JsonUtility.FromJson<SerializableArcher>(json));
                         break;
 
                     default:

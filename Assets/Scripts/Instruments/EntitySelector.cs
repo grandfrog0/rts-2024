@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class EntitySelection : MonoBehaviour
+public class EntitySelector : MonoBehaviour
 {
     [SerializeField] UnityEvent<HashSet<Entity>> onSelectionChanged = new();
 
@@ -18,7 +18,6 @@ public class EntitySelection : MonoBehaviour
     [SerializeField] RectTransform selectionField;
     private Vector3 _selectionStart;
     private Vector3 _mouseDelta;
-
 
     private void HandleObjectClick(Entity entity, bool revertSelected, bool multipleChoice)
     {
