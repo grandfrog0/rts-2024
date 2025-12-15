@@ -51,10 +51,10 @@ public abstract class Entity : MonoBehaviour, IHurtable
         }
     }
 
-    private EnemyAI _enemyAI;
+    private ArcherAI _enemyAI;
     public virtual void Init(int teamID)
     {
-        _enemyAI = GetComponent<EnemyAI>();
+        _enemyAI = GetComponent<ArcherAI>();
         _health = maxHealth;
         TeamID = teamID;
     }

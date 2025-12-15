@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 
 public class GamePreparer : MonoBehaviour
@@ -10,6 +11,7 @@ public class GamePreparer : MonoBehaviour
     [SerializeField] MapCamera mapCamera;
     [SerializeField] Transform floorTransform;
     [SerializeField] Inventory inventory;
+    [SerializeField] NavMeshSurface surface;
 
     public void Prepare(GameConfig gameConfig)
     {
@@ -29,6 +31,6 @@ public class GamePreparer : MonoBehaviour
         mapCamera.Init(generationData);
 
         floorTransform.localScale = new Vector3(gameConfig.WorldSize * 2, floorTransform.localScale.y, gameConfig.WorldSize * 2);
-
+        surface.BuildNavMesh();
     }
 }

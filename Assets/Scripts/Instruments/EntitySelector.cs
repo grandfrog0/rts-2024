@@ -26,12 +26,13 @@ public class EntitySelector : MonoBehaviour
             if (unit is Archer archer && unit.WaitingTask == UnitTask.Attack && entity.TeamID != unit.TeamID)
             {
                 archer.SetAttackDestination(entity);
+                return;
             }
             else if (unit is Healer healer && unit.WaitingTask == UnitTask.Heal && entity.TeamID == unit.TeamID)
             {
                 healer.SetHealDestination(entity);
+                return;
             }
-            return;
         }
 
         bool contains = _selectedEntities.Contains(entity);

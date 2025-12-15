@@ -1601,7 +1601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &133446200
 Transform:
   m_ObjectHideFlags: 0
@@ -9641,7 +9641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1100546317
 Transform:
   m_ObjectHideFlags: 0
@@ -10475,6 +10475,7 @@ MonoBehaviour:
   mapCamera: {fileID: 712184598}
   floorTransform: {fileID: 1866490904}
   inventory: {fileID: 1189306426}
+  surface: {fileID: 1866490908}
 --- !u!114 &1189306419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17271,7 +17272,7 @@ GameObject:
   - component: {fileID: 1866490905}
   - component: {fileID: 1866490908}
   m_Layer: 7
-  m_Name: Floor
+  m_Name: Surface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17392,7 +17393,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 960ab7a52e8ba1d4ea0d5f5d6c567d69, type: 2}
+  m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
 --- !u!1 &1872459276
 GameObject:

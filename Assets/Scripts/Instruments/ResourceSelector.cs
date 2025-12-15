@@ -32,7 +32,7 @@ public class ResourceSelector: MonoBehaviour
             {
                 foreach (Builder builder in _builders)
                 {
-                    if ((builder.CurrentTask == UnitTask.None || builder.CurrentTask == UnitTask.Mine) && builder.WaitingTask == UnitTask.Mine)
+                    if (builder.WaitingTask == UnitTask.Mine)
                         builder.SetMineDestination(resource);
                 }
             }
