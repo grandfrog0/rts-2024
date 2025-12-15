@@ -20,7 +20,7 @@ public abstract class Entity : MonoBehaviour, IHurtable
     public float Health 
     { 
         get => _health;
-        private set
+        protected set
         {
             _health = Mathf.Clamp(value, 0, MaxHealth);
             OnHealthChanged.Invoke();

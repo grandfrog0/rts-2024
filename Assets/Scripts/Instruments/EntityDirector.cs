@@ -29,6 +29,8 @@ public class EntityDirector : MonoBehaviour
             {
                 if (unit.CurrentTask == UnitTask.None && unit.WaitingTask == UnitTask.Command)
                     unit.SetDestination(hit.point);
+                else if (unit.CurrentTask == UnitTask.None && unit.WaitingTask == UnitTask.Patrol)
+                    unit.SetDestination(hit.point);
             }
         }
     }

@@ -109,5 +109,7 @@ public class Unit : Entity
         MaxHealth = unit.MaxHealth;
         TrainingCost = unit.TrainingCost;
         DetectionRange = unit.DetectionRange;
+
+        Health = MaxHealth;
     }
 }

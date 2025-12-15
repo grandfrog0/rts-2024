@@ -21,6 +21,19 @@ public class EntitySelector : MonoBehaviour
 
     private void HandleObjectClick(Entity entity, bool revertSelected, bool multipleChoice)
     {
+        if (_selectedEntities.Count == 1 && _selectedEntities.First() is Unit unit)
+        {
+            if (unit is Archer archer && unit.WaitingTask == UnitTask.Attack && entity.TeamID != unit.TeamID)
+            {
+                archer.SetAttackDestination(entity);
+            }
+            else if (unit is Healer healer && unit.WaitingTask == UnitTask.Heal && entity.TeamID == unit.TeamID)
+            {
+                healer.SetHealDestination(entity);
+            }
+            return;
+        }
+
         bool contains = _selectedEntities.Contains(entity);
 
         if (!multipleChoice)

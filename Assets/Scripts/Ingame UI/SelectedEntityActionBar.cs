@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class SelectedEntityActionBar : MonoBehaviour
 {
     [SerializeField] GameObject buildActionsParent, mainActionsParent;
+    [SerializeField] GameObject builderButtons, archerButtons, healerButtons;
 
     public void OnEntityChanged(HashSet<Entity> entities)
     {
@@ -28,6 +29,10 @@ public class SelectedEntityActionBar : MonoBehaviour
     {
         mainActionsParent.SetActive(true);
         buildActionsParent.SetActive(entity is Builder);
+
+        builderButtons.SetActive(entity is Builder);
+        archerButtons.SetActive(entity is Archer);
+        healerButtons.SetActive(entity is Healer);
     }
     public void ClearInterface()
     {

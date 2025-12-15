@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Archer : Unit
 {
+    public void SetAttackDestination(IHurtable hurtable)
+    {
+        _targetMovement.SetTarget(hurtable.Position);
+        SetAttackTarget(hurtable);
+        CurrentTask = UnitTask.Attack;
+        WaitingTask = UnitTask.None;
+
+        hurtable.OnDead.AddListener(ClearCurrentTask);
+    }
     public void Load(SerializableArcher unit)
     {
         Load(unit as SerializableUnit);

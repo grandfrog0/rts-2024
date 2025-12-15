@@ -15,7 +15,7 @@ public class Builder : Unit
         WaitingTask = UnitTask.None;
         SetAttackTarget(resource);
 
-        resource.OnBroken.AddListener(ClearCurrentTask);
+        resource.OnDead.AddListener(ClearCurrentTask);
     }
     public void Load(SerializableBuilder unit)
     {

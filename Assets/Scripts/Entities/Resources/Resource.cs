@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Resource : MonoBehaviour, IHurtable
 {
     public UnityEvent OnHealthChanged { get; } = new();
-    public UnityEvent OnBroken { get; } = new();
+    public UnityEvent OnDead { get; } = new();
 
     [Header("Characteristics")]
     private bool _isBroken = false;
@@ -53,7 +53,7 @@ public class Resource : MonoBehaviour, IHurtable
         Inventory.instance.AddCount(ResourceName, 1);
         gameObject.SetActive(false);
 
-        OnBroken.Invoke();
-        OnBroken.RemoveAllListeners();
+        OnDead.Invoke();
+        OnDead.RemoveAllListeners();
     }
 }
