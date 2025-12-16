@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9146652015267904581}
   - component: {fileID: 5182985921798079850}
   - component: {fileID: 6302941059682304390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stairsStoneSlant (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1435941970370086352}
   - component: {fileID: 4259029713575415698}
   - component: {fileID: 2254235816871638515}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 2555782016668640106}
   - component: {fileID: 512526428235012311}
   - component: {fileID: 6513921025323415419}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stairsStoneSlant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 4049127452643819304}
   - component: {fileID: 1503389310551169819}
   - component: {fileID: 1141197799425737264}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: towerSquareMidWindows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 5951313062537199061}
   - component: {fileID: 3827560402769744576}
   - component: {fileID: 3548005817903389662}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallStud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 2812183827250803736}
   - component: {fileID: 8927016380643054337}
   - component: {fileID: 3069205684163339062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: towerSquareBaseBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 5787582608139589013}
   - component: {fileID: 6893679736739021570}
   - component: {fileID: 656930553240125527}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stairsStone (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 4587563923625807561}
   - component: {fileID: 1559362568955577605}
   - component: {fileID: 1820119024781751100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stairsStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,7 +719,7 @@ GameObject:
   - component: {fileID: 8915821100894921368}
   - component: {fileID: 2622221302735290738}
   - component: {fileID: 8956416152374426621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: towerSquareMid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

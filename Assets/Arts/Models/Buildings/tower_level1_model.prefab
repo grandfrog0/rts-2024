@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 9081361959447284210}
   - component: {fileID: 9114804251798489516}
   - component: {fileID: 9105329016291558920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: towerSquareTopRoof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 9086059383535606824}
   - component: {fileID: 9110816379522839000}
   - component: {fileID: 9105364764687356216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: flagBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 9081284333269801636}
   - component: {fileID: 9114758806848251644}
   - component: {fileID: 9104679404982072120}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TowerModel_Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 9081339861997832080}
   - component: {fileID: 9115148834029520366}
   - component: {fileID: 9104436080681602118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: flag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 9086171288281978048}
   - component: {fileID: 9114581205789535426}
   - component: {fileID: 9105200557539476692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: towerSquareMidWindows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 9081251284693807280}
   - component: {fileID: 9110795117785074846}
   - component: {fileID: 9104390575186833874}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: flagBannerLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}

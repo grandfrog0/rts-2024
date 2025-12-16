@@ -50,6 +50,8 @@ public abstract class Entity : MonoBehaviour, IHurtable
             _teamID = value; 
         }
     }
+    [SerializeField] int _attackPriority;
+    public int AttackPriority => _attackPriority;
 
     private ArcherAI _enemyAI;
     public virtual void Init(int teamID)

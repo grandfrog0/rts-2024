@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using static UnityEngine.UI.CanvasScaler;
 
 public class EntitySelector : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class EntitySelector : MonoBehaviour
 
     private void HandleObjectClick(Entity entity, bool revertSelected, bool multipleChoice)
     {
-        if (_selectedEntities.Count == 1 && _selectedEntities.First() is Unit unit)
+        if (!multipleChoice && _selectedEntities.Count == 1 && _selectedEntities.First() is Unit unit)
         {
             if (unit is Archer archer && unit.WaitingTask == UnitTask.Attack && entity.TeamID != unit.TeamID)
             {
@@ -54,34 +55,66 @@ public class EntitySelector : MonoBehaviour
 
     private void ClearSelected()
     {
-        //Entity first = null;
-        //if (_selectedEntities.Count == 1)
-        //    first = _selectedEntities.First();
-
         _selectedEntities.Clear();
-
-        //if (first != null && first == UnitTaskManager.SelectedUnit && UnitTaskManager.IsAppliedNow)
-        //    _selectedEntities.Add(first);
-
         onSelectionChanged.Invoke(_selectedEntities);
     }
 
     public void MouseDown()
     {
         // Multiple selection
-       
         _selectionStart = Input.mousePosition;
         selectionField.anchoredPosition = _selectionStart - new Vector3(Screen.width / 2, Screen.height / 2);
+    }
+    public void MouseHold()
+    {
+        _mouseDelta = Input.mousePosition - _selectionStart;
 
-        // Solo selection
-       
-        // ui click ignore
+        selectionField.pivot = new Vector2(_mouseDelta.x >= 0 ? 0 : 1, _mouseDelta.y >= 0 ? 0 : 1);
+        selectionField.sizeDelta = new Vector2(Mathf.Abs(_mouseDelta.x), Mathf.Abs(_mouseDelta.y));
+    }
+    public void MouseUp()
+    {
+        Vector3 start = _selectionStart;
+        Vector3 end = start + _mouseDelta;
+
+        Rect rect = GetScreenRect(start, end);
+
+        if (rect.width < 5 && rect.height < 5)
+        {
+            selectionField.sizeDelta = Vector2.zero;
+            HandleSingleClick();
+            return;
+        }
+
+        Debug.Log(rect);
+        _selectedEntities.Clear();
+        foreach (Entity entity in EntitySpawner.Entities)
+        {
+            if (!entity.IsAlive)
+                continue;
+
+            Vector3 screenPos = _camera.WorldToScreenPoint(entity.transform.position);
+
+            if (rect.Contains(screenPos))
+            {
+                HandleObjectClick(entity, revertSelected: false, multipleChoice: true);
+            }
+        }
+        onSelectionChanged.Invoke(_selectedEntities);
+
+        // clear
+        selectionField.sizeDelta = Vector2.zero;
+    }
+    public void HandleSingleClick()
+    {
+        Debug.Log(0);
         if (EventSystem.current.IsPointerOverGameObject())
             return;
+        Debug.Log(1);
 
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
-        bool multipleChoice = Input.GetKey(KeyCode.LeftControl);
+        bool multipleChoice = Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.LeftShift);
 
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, objectLayerMask, QueryTriggerInteraction.Ignore))
         {
@@ -98,50 +131,12 @@ public class EntitySelector : MonoBehaviour
             ClearSelected();
         }
     }
-    public void MouseHold()
+    private Rect GetScreenRect(Vector3 screenPosition1, Vector3 screenPosition2)
     {
-        _mouseDelta = Input.mousePosition - _selectionStart;
+        Vector3 topLeft = Vector3.Min(screenPosition1, screenPosition2);
+        Vector3 bottomRight = Vector3.Max(screenPosition1, screenPosition2);
 
-        selectionField.pivot = new Vector2(_mouseDelta.x >= 0 ? 0 : 1, _mouseDelta.y >= 0 ? 0 : 1);
-        selectionField.sizeDelta = new Vector2(Mathf.Abs(_mouseDelta.x), Mathf.Abs(_mouseDelta.y));
-    }
-    public void MouseUp()
-    {
-        // lb, lu, ru, rb
-        Vector3[] corners = new Vector3[4];
-        selectionField.GetWorldCorners(corners);
-
-        for (int i = 0; i < corners.Length; i++)
-        {
-            corners[i] = new Vector3(Mathf.Clamp(corners[i].x, 0, Screen.width), Mathf.Clamp(corners[i].y, 0, Screen.height));
-            corners[i] = ScreenToWorldPoint(corners[i]).Value;
-        }
-
-        //Debug.Log(string.Join("; ", corners));
-
-        Vector3 halfExtents = corners[2] - corners[0];
-
-        if (halfExtents.magnitude > 0.25f)
-        {
-            Vector3 center = corners[0] + halfExtents / 2;
-            halfExtents.y = 10;
-            center.y = 0;
-
-            Collider[] colliders = Physics.OverlapBox(center, halfExtents, Quaternion.identity, objectLayerMask, QueryTriggerInteraction.Ignore);
-            foreach (Collider collider in new HashSet<Collider>(colliders))
-            {
-                //Debug.Log(collider);
-                if (collider.TryGetComponent(out Entity entity))
-                {
-                    HandleObjectClick(entity, false, true);
-                }
-            }
-
-            onSelectionChanged.Invoke(_selectedEntities);
-        }
-
-        // clear
-        selectionField.sizeDelta = Vector2.zero;
+        return Rect.MinMaxRect(topLeft.x, topLeft.y, bottomRight.x, bottomRight.y);
     }
     private Vector3? ScreenToWorldPoint(Vector3 screenPoint)
     {

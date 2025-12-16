@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 847717783542530888}
   - component: {fileID: 4353970665168735469}
   - component: {fileID: 1984009399526127655}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallDoorwayRound (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 720971653213773454}
   - component: {fileID: 4444697085792604459}
   - component: {fileID: 1894409308946376161}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: planks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 596826097644571498}
   - component: {fileID: 4604791776396870863}
   - component: {fileID: 1730357458676117509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallDoorwayRound (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4676449879359666031}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 202059993344151894}
   - component: {fileID: 3846645737770688243}
   - component: {fileID: 1335018921937824313}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: roofHighGableDetail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 91642791765715469}
   - component: {fileID: 3957062322243282344}
   - component: {fileID: 1229122602265760098}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallWoodSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 131695666606992434}
   - component: {fileID: 3926077947623924631}
   - component: {fileID: 1267988001327060829}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallDoorwayRound (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 4376149019388746366}
   - component: {fileID: 5213383406026640909}
   - component: {fileID: 453428661167184315}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: hay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 120164424731494706}
   - component: {fileID: 3892574065378821783}
   - component: {fileID: 1288526700163723869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stallBench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 510442566201412414}
   - component: {fileID: 3511311662628177051}
   - component: {fileID: 1683880151738445905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallCornerEdge (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 568558890647515599}
   - component: {fileID: 3480216918506372714}
   - component: {fileID: 1704825286852381344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: planks (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -885,7 +885,7 @@ GameObject:
   - component: {fileID: 1996414887936015923}
   - component: {fileID: 3178251979649790358}
   - component: {fileID: 864581314591180124}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: roofHighCornerRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -970,7 +970,7 @@ GameObject:
   - component: {fileID: 8938568836507773665}
   - component: {fileID: 1861576456162804731}
   - component: {fileID: 182755190718471009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wheel 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1054,7 +1054,7 @@ GameObject:
   - component: {fileID: 2936626725253670029}
   - component: {fileID: 2265070815326694184}
   - component: {fileID: 4074581933470130146}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cartHigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1140,7 +1140,7 @@ GameObject:
   - component: {fileID: 3207623881901417667}
   - component: {fileID: 1957974539392789350}
   - component: {fileID: 4380005937618149292}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallCornerEdge (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1224,7 +1224,7 @@ GameObject:
   - component: {fileID: 2505535313952409461}
   - component: {fileID: 1543231101283829968}
   - component: {fileID: 3642954476023413786}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: planks (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1307,7 +1307,7 @@ GameObject:
   - component: {fileID: 2378378316036828444}
   - component: {fileID: 1634360191792374457}
   - component: {fileID: 3551825694097020531}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stallStool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1390,7 +1390,7 @@ GameObject:
   - component: {fileID: 2383206613308808534}
   - component: {fileID: 1638468437798621939}
   - component: {fileID: 3556142851609716281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallDoorwayRound (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1474,7 +1474,7 @@ GameObject:
   - component: {fileID: 2677091401510667225}
   - component: {fileID: 1335647037311732860}
   - component: {fileID: 3849975898741946550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallCornerEdge (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1558,7 +1558,7 @@ GameObject:
   - component: {fileID: 4247664072961082045}
   - component: {fileID: 963031918273088792}
   - component: {fileID: 3078658003542948306}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: roofHighCornerRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1643,7 +1643,7 @@ GameObject:
   - component: {fileID: 4533047654385279780}
   - component: {fileID: 668579238038891649}
   - component: {fileID: 3360725527556167755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallCornerEdge (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1781,7 +1781,7 @@ GameObject:
   - component: {fileID: 3506560427372612240}
   - component: {fileID: 506115871349114165}
   - component: {fileID: 2369705934447669759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallWindowStone (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1864,7 +1864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1186471445027931046}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: round_roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1901,7 +1901,7 @@ GameObject:
   - component: {fileID: 5925042230499824426}
   - component: {fileID: 7320074603151121551}
   - component: {fileID: 4788125029847967813}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallWindowStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1985,7 +1985,7 @@ GameObject:
   - component: {fileID: 6182722997432382707}
   - component: {fileID: 7089416068042029910}
   - component: {fileID: 5009793974543028124}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallDoorwayRound (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2070,7 +2070,7 @@ GameObject:
   - component: {fileID: 6178906128116548075}
   - component: {fileID: 7066211551129112142}
   - component: {fileID: 5040881199694805636}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: roofHighCornerRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2155,7 +2155,7 @@ GameObject:
   - component: {fileID: 8066971403785939902}
   - component: {fileID: 6367096279694713883}
   - component: {fileID: 9203263192912548049}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: planks (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2238,7 +2238,7 @@ GameObject:
   - component: {fileID: 8049714261668368045}
   - component: {fileID: 6348263399975846152}
   - component: {fileID: 9222660259476960706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallDoorwayRound (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2322,7 +2322,7 @@ GameObject:
   - component: {fileID: 7906191022005443165}
   - component: {fileID: 6491856733534377464}
   - component: {fileID: 9075670259785769266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallCornerEdge (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2406,7 +2406,7 @@ GameObject:
   - component: {fileID: 7846817128429878808}
   - component: {fileID: 6578251693388755389}
   - component: {fileID: 8984208767413159287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: roofHighCornerRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2491,7 +2491,7 @@ GameObject:
   - component: {fileID: 7069366238358525349}
   - component: {fileID: 6175759686138124800}
   - component: {fileID: 8237158481700859594}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallCornerEdge (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2575,7 +2575,7 @@ GameObject:
   - component: {fileID: 6072515907099508079}
   - component: {fileID: 1435234480056796263}
   - component: {fileID: 7120441452427362310}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2657,7 +2657,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6946995797688209620}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2693,7 +2693,7 @@ GameObject:
   - component: {fileID: 8922640351812459561}
   - component: {fileID: 5511365485697307532}
   - component: {fileID: 7753152352567617350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: planks (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2776,7 +2776,7 @@ GameObject:
   - component: {fileID: 9161467617007741894}
   - component: {fileID: 5227493719140377699}
   - component: {fileID: 8029705512052478121}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2860,7 +2860,7 @@ GameObject:
   - component: {fileID: 9197196195733090768}
   - component: {fileID: 5191764865511964277}
   - component: {fileID: 8063745619008768703}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallDoorwayRound (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3000,6 +3000,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4ba5359554d8b0544bc35b50c2c5d5cd, type: 3}
       propertyPath: m_Name
       value: windmill
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4ba5359554d8b0544bc35b50c2c5d5cd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

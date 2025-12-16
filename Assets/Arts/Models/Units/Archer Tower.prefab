@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1322196797275015500}
   - component: {fileID: 4257326600139256721}
   - component: {fileID: 5432005057852167923}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wheelFrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 840099252271332662}
   - component: {fileID: 4113794238926540959}
   - component: {fileID: 5819146518158967717}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1075620211702186816}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: unit_carrier_position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7136307974824753408}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Archer Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 1173812037799107000}
   - component: {fileID: 9071006589954134225}
   - component: {fileID: 3471822306401037745}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: flagBannerLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 7678448340427597094}
   - component: {fileID: 2529792262945040696}
   - component: {fileID: 7533303472340340369}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 'wheelFrontLeft '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 9037057378366780299}
   - component: {fileID: 7754987493372316204}
   - component: {fileID: 3260258420173415854}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wheelBackLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +502,7 @@ GameObject:
   - component: {fileID: 5691771760207838989}
   - component: {fileID: 8878013128523141109}
   - component: {fileID: 3401048696378624786}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wheelBackRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
       propertyPath: m_Name
@@ -26,7 +26,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
       propertyPath: m_LocalPosition.y
@@ -38,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.196
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
       propertyPath: m_LocalPosition.z
@@ -133,8 +145,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.75, z: 1}
-  m_Center: {x: -0.6, y: 0.32, z: -0.5}
+  m_Size: {x: 0.75, y: 0.4, z: 0.75}
+  m_Center: {x: -0.4, y: 0.4, z: -0.4}
 --- !u!1 &4412417125401228054 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
@@ -166,7 +178,7 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.008576444
+  - screenRelativeHeight: 0.0066852616
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 4412417125398965718}

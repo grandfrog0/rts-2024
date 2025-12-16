@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -9,20 +10,22 @@ using UnityEngine.Events;
 public class EntitySpawner : MonoBehaviour
 {
     public static UnityEvent<int, List<Unit>> OnUnitsCountChanged = new ();
+    public static List<Entity> Entities => _instance._entities;
     private static EntitySpawner _instance;
 
     public static Entity Spawn(GameObject entity, Vector3 position, Quaternion rotation, int teamID = -1)
         => Spawn(entity.GetComponent<Entity>(), position, rotation, teamID);
-    public static Entity Spawn(Entity entity, Vector3 position, Quaternion rotation, int teamID = -1)
+    public static Entity Spawn(Entity prefab, Vector3 position, Quaternion rotation, int teamID = -1)
     {
-        Entity e = Instantiate(entity, position, rotation, _instance.unitParent);
-        e.Init(teamID);
+        Entity entity = Instantiate(prefab, position, rotation, _instance.unitParent);
+        entity.Init(teamID);
 
-        if (e is Unit unit)
+        _instance._entities.Add(entity);
+        if (entity is Unit unit)
         {
-            if (e.ConfigName != "")
+            if (entity.ConfigName != "")
             {
-                string json = ResourceManager.GetText(e.ConfigName);
+                string json = ResourceManager.GetText(entity.ConfigName);
                 switch (unit)
                 {
                     case Builder builder:
@@ -52,12 +55,13 @@ public class EntitySpawner : MonoBehaviour
                 });
         }
 
-        return e;
+        return entity;
     }
 
     [SerializeField] Transform unitParent;
     [SerializeField] LayerMask floorMask;
     private Dictionary<int, List<Unit>> _units = new();
+    private List<Entity> _entities = new();
     public void Initialize()
     {
         if (_instance == null)

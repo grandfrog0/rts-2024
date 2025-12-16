@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 971133542458024264}
   - component: {fileID: 4239562194353811181}
   - component: {fileID: 2103466982483597863}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: roofPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 5784926007057638614}
   - component: {fileID: 7487221293479750515}
   - component: {fileID: 4612534090229948345}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wallDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 8322000542786874929}
   - component: {fileID: 2136312777032747022}
   - component: {fileID: 3042695408607051095}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 8788579415352596069}
   - component: {fileID: 5645427056740784576}
   - component: {fileID: 7619073206522555658}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 9051720861666082661}
   - component: {fileID: 5346326632973365440}
   - component: {fileID: 7914232980116505610}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 8495740570146632867}
   - component: {fileID: 4776406724514544390}
   - component: {fileID: 7326727492413755340}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

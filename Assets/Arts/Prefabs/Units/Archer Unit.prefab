@@ -108,6 +108,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 18b3e586b942b6548bb07ff2451b8535, type: 3}
   Name: Archer
   _size: 1
+  _attackPriority: 5
   _attackRange: 7.5
   _cooldown: 1
 --- !u!1001 &6142994324039388357

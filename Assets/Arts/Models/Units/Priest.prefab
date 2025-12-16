@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2327018945740870879}
   - component: {fileID: 6034499572430068922}
   - component: {fileID: 2403960484961078414}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4358199234350678336}
   - component: {fileID: 2481741738556305708}
   - component: {fileID: -4130291687715196595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Priest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 5972606885872627834}
   - component: {fileID: 8318839132394670527}
   - component: {fileID: 2904878566693765823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 344089153946986979}
   - component: {fileID: 5050405129661363724}
   - component: {fileID: 8207881200588736860}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}

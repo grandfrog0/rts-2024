@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8402228130041929702}
   - component: {fileID: 7052412135214550811}
   - component: {fileID: 8485326831726139489}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DropOffBoxTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4335234023522017540}
   - component: {fileID: 4907375432299814561}
   - component: {fileID: 7666953570854700596}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DropOffBoxTile (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 6273982971062982965}
   - component: {fileID: 3485157020541954235}
   - component: {fileID: 2057761362638671680}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DropOffBoxTile (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 311703254577322613}
   - component: {fileID: 5824362860803521803}
   - component: {fileID: 5444739382605333363}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HammerHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 3329277822347548549}
   - component: {fileID: 8313103453175374988}
   - component: {fileID: 7465529837392668743}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: drop_off_food_pumpkin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 581012974474041902}
   - component: {fileID: 7439782334996858558}
   - component: {fileID: 3424298215761088762}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DropOffBoxTile (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 4494780544471820068}
   - component: {fileID: 2356788031699224195}
   - component: {fileID: 8263538702870111526}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Villager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,7 +621,7 @@ GameObject:
   - component: {fileID: 646318636766798139}
   - component: {fileID: 3379778041095238067}
   - component: {fileID: 7756547735401319932}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 4187068306299273973}
   - component: {fileID: 4832024102643855158}
   - component: {fileID: 875102117645130749}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 1056449907026688488}
   - component: {fileID: 2909465138730044566}
   - component: {fileID: 2439153294322989006}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DropOffBoxTile (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 1092006706055496504}
   - component: {fileID: 6623207480300134362}
   - component: {fileID: 1626514744770298552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: drop_off_metal_minerals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -953,7 +953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6133818555324691788}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: drop_off_wood_box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -991,7 +991,7 @@ GameObject:
   - component: {fileID: 44681020008048480}
   - component: {fileID: 2821462995906226044}
   - component: {fileID: 121405747685711307}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1074,7 +1074,7 @@ GameObject:
   - component: {fileID: 3438351292419967135}
   - component: {fileID: 6986981702958336917}
   - component: {fileID: 1857409328804694653}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: right
   m_TagString: Untagged
   m_Icon: {fileID: 0}

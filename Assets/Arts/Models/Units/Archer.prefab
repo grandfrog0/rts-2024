@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2019298169329714672}
   - component: {fileID: 7755310089043288805}
   - component: {fileID: -5882342578350319929}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Archer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2503440053198489479}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bow_arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 8368734077084722571}
   - component: {fileID: 3754416718206266915}
   - component: {fileID: 4331083756971517090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 5964527257443975260}
   - component: {fileID: 5323195901791353467}
   - component: {fileID: 2498373734093004328}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 8474923986957322558}
   - component: {fileID: 958314495394415898}
   - component: {fileID: 385384735733965409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2496572100672504152}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: attack_obj_source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 2689873433531095507}
   - component: {fileID: 3659324328717201675}
   - component: {fileID: 1346374941042006090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: left
   m_TagString: Untagged
   m_Icon: {fileID: 0}

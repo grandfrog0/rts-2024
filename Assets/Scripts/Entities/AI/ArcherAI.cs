@@ -7,7 +7,7 @@ using UnityEngine;
 public class ArcherAI : MonoBehaviour
 {
     private Archer _unit;
-    private Transform _target;
+    private Entity _target;
 
     private void Awake()
     {
@@ -18,19 +18,12 @@ public class ArcherAI : MonoBehaviour
         if (_unit.TeamID == 0)
             return;
 
-        float colliderDistance = Vector3.Distance(transform.position, coll.transform.position);
-        if ((_target == null || Vector3.Distance(transform.position, _target.position) > colliderDistance || _target == coll.transform) &&
-            coll.TryGetComponent(out Entity other) && other.TeamID != _unit.TeamID)
+        if (coll.TryGetComponent(out Entity other) && other.IsAlive && other.TeamID != _unit.TeamID && 
+            (_target == null || !_target.IsAlive || other.AttackPriority > _target.AttackPriority || Vector3.Distance(transform.position, _target.Position) > Vector3.Distance(transform.position, coll.transform.position)))
         {
+            Debug.Log((_target, other, _target.AttackPriority, other.AttackPriority));
+            _target = other;
             _unit.SetAttackDestination(other);
-
-            //_target = coll.transform;
-            //_unit.SetDestination(other.transform.position);
-            
-            //if (colliderDistance <= _unit.MaxAttackRange)
-            //{
-            //    _unit.SetAttackTarget(other);
-            //}
         } 
     }
     private void OnTriggerExit(Collider other)

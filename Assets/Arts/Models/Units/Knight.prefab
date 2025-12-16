@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6601227658137727030}
   - component: {fileID: 8480598941948549151}
   - component: {fileID: 6794104872347469257}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 9033564630439784567}
   - component: {fileID: 357077816265064648}
   - component: {fileID: 8433984878829225096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 8129907857298209634}
   - component: {fileID: 1698184173998367845}
   - component: {fileID: 8152451375222968876}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 7702529478925393676}
   - component: {fileID: 5311081296686220994}
   - component: {fileID: 6752685869780797396}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 2985809648365180367}
   - component: {fileID: 8396263849528899526}
   - component: {fileID: 6147837703437541581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}

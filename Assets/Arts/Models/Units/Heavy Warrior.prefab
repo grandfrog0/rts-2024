@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8741757554513164269}
   - component: {fileID: 1320439768497467170}
   - component: {fileID: 4936294316520853229}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5325431170593008452}
   - component: {fileID: 2214803314593051169}
   - component: {fileID: -2659958500442707816}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Heavy Warrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 5591720945345634325}
   - component: {fileID: 3414285067925832440}
   - component: {fileID: 8535495401743064770}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 8002890774538891889}
   - component: {fileID: 8984280873087345789}
   - component: {fileID: 7851298748040751489}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 3706339885204917653}
   - component: {fileID: 3633083676785171306}
   - component: {fileID: 3109209636040474349}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 6597394800146268014}
   - component: {fileID: 889453555207530451}
   - component: {fileID: 7084146634290700533}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shieldBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
