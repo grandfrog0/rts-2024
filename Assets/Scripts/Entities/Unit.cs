@@ -27,8 +27,26 @@ public class Unit : Entity
     public float DetectionRange { get; set; }
 
     // Tasks
-    public UnitTask CurrentTask { get; protected set; } = UnitTask.None;
+    private UnitTask _currentTask = UnitTask.None;
+    public UnitTask CurrentTask
+    {
+        get => _currentTask;
+        protected set
+        {
+            BreakTask();
+            _currentTask = value;
+        }
+    }
     public UnitTask WaitingTask { get; set; } = UnitTask.None;
+
+    // Animator
+    [SerializeField] string attackAnimationName = "OnAttack";
+    private Animator _animator;
+
+    public void BreakTask()
+    {
+        _currentTask = UnitTask.None;
+    }
 
     // Movement logic
     protected TargetMovement _targetMovement;
@@ -36,14 +54,18 @@ public class Unit : Entity
     {
         _targetMovement.SetTarget(position);
         CurrentTask = UnitTask.Command;
-        WaitingTask = UnitTask.None;
+        //WaitingTask = UnitTask.None;
     }
     private void OnTargetGoaled()
-        => ClearCurrentTask();
+    {
+        ClearCurrentTask();
+        _animator.SetBool("isMoving", false);
+    }
 
     public void ClearCurrentTask()
     {
         CurrentTask = UnitTask.None;
+        //WaitingTask = UnitTask.None;
     }
 
     // Attack logic
@@ -79,6 +101,7 @@ public class Unit : Entity
             if (Vector3.Distance(transform.position, _attackTarget.Position) < MaxAttackRange)
             {
                 Attack(_attackTarget);
+                _animator.SetTrigger(attackAnimationName);
 
                 InCooldown = true;
                 yield return new WaitForSeconds(Cooldown);
@@ -95,8 +118,11 @@ public class Unit : Entity
     public override void Init(int teamID)
     {
         base.Init(teamID);
+
         _targetMovement = GetComponent<TargetMovement>();
         _targetMovement.onTargetGoaled = OnTargetGoaled;
+
+        _animator = GetComponentInChildren<Animator>();
     }
     private void OnDrawGizmosSelected()
     {
@@ -111,5 +137,12 @@ public class Unit : Entity
         DetectionRange = unit.DetectionRange;
 
         Health = MaxHealth;
+    }
+
+    protected override void Die(Entity enemy)
+    {
+        _animator.SetTrigger("OnDied");
+
+        base.Die(enemy);
     }
 }

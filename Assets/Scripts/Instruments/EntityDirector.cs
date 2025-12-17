@@ -24,13 +24,18 @@ public class EntityDirector : MonoBehaviour
 
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Floor"), QueryTriggerInteraction.Ignore))
         {
-            //UnitTaskManager.IsAppliedNow = false;
             foreach (Unit unit in _units)
             {
-                if (unit.CurrentTask == UnitTask.None && unit.WaitingTask == UnitTask.Command)
+                if (unit.WaitingTask == UnitTask.Command)
+                {
                     unit.SetDestination(hit.point);
-                else if (unit.CurrentTask == UnitTask.None && unit.WaitingTask == UnitTask.Patrol)
+                    EntitySelector.IgnoreNext = true;
+                }
+                else if (unit.WaitingTask == UnitTask.Patrol)
+                {
                     unit.SetDestination(hit.point);
+                    EntitySelector.IgnoreNext = true;
+                }
             }
         }
     }

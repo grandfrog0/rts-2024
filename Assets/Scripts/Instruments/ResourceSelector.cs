@@ -33,7 +33,10 @@ public class ResourceSelector: MonoBehaviour
                 foreach (Builder builder in _builders)
                 {
                     if (builder.WaitingTask == UnitTask.Mine)
+                    {
                         builder.SetMineDestination(resource);
+                        EntitySelector.IgnoreNext = true;
+                    }
                 }
             }
         }

@@ -20,6 +20,10 @@ public class UnitTaskManager : MonoBehaviour
         set
         {
             SelectedUnit.WaitingTask = value;
+
+            if (value == UnitTask.None)
+                EntitySelector.IgnoreNext = false;
+
             onUnitTaskChanged.Invoke(value);
         }
     }

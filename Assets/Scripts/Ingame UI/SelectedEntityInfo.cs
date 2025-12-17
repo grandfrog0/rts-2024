@@ -10,32 +10,32 @@ public class SelectedEntityInfo : MonoBehaviour
 {
     [SerializeField] GameObject entityInfoWindow, entitiesInfoWindow, resourcesViewWindow;
     // entity
-    [SerializeField] Image entityImage, entityHealthBar;
+    [SerializeField] Image entityImage, entityHealthBar, entityColorViewer;
     [SerializeField] TMP_Text entityTitle, entityHealthBarText;
     private Entity _curEntity;
     // entities
     [SerializeField] EntityInfoMini entityInfoMini;
     private List<EntityInfoMini> _entities = new();
 
+    public List<Color> TeamColors { get; set; }
+
     public void OnEntityChanged(HashSet<Entity> entities)
     {
-        List<Entity> playerEntities = entities.Where(e => e.TeamID == 0).ToList();
-
-        if (playerEntities.Count == 0)
+        if (entities.Count == 0)
         {
             ClearInterface();
         }
-        else if (playerEntities.Count == 1)
+        else if (entities.Count == 1)
         {
-            SetEntity(playerEntities[0]);
+            SetEntity(entities.First());
         }
         else
         {
-            SetEntities(playerEntities);
+            SetEntities(entities);
         }
     }
 
-    public void SetEntities(List<Entity> entities)
+    public void SetEntities(HashSet<Entity> entities)
     {
         UnloadEntity();
         ClearEntities();
@@ -46,6 +46,8 @@ public class SelectedEntityInfo : MonoBehaviour
             EntityInfoMini info = Instantiate(entityInfoMini, entitiesInfoWindow.transform);
             info.Icon.sprite = entity.Icon;
             info.HealthBar.fillAmount = entity.Health / entity.MaxHealth;
+            Debug.Log(entity.TeamID);
+            info.ColorViewer.color = entity.TeamID != -1 ? TeamColors[entity.TeamID] : Color.clear;
             info.Subscribe(entity);
             _entities.Add(info);
         }
@@ -82,6 +84,7 @@ public class SelectedEntityInfo : MonoBehaviour
 
         entityImage.sprite = entity.Icon;
         entityTitle.text = entity.Name;
+        entityColorViewer.color = entity.TeamID != -1 ? TeamColors[entity.TeamID] : Color.clear;
         UpdateEntityHealth();
 
         resourcesViewWindow.SetActive(entity is Builder);

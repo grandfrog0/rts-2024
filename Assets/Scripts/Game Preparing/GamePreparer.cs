@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.AI.Navigation;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public class GamePreparer : MonoBehaviour
     [SerializeField] Transform floorTransform;
     [SerializeField] Inventory inventory;
     [SerializeField] NavMeshSurface surface;
+    [SerializeField] SelectedEntityInfo selectedEntityInfo;
 
     public void Prepare(GameConfig gameConfig)
     {
@@ -32,5 +34,8 @@ public class GamePreparer : MonoBehaviour
 
         floorTransform.localScale = new Vector3(gameConfig.WorldSize * 2, floorTransform.localScale.y, gameConfig.WorldSize * 2);
         surface.BuildNavMesh();
+
+        selectedEntityInfo.TeamColors = gameConfig.EnemiesData.Select(x => x.Color).ToList();
+        selectedEntityInfo.TeamColors.Insert(0, gameConfig.PlayerData.Color);
     }
 }

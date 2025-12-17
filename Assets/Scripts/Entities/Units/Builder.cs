@@ -12,7 +12,7 @@ public class Builder : Unit
     {
         _targetMovement.SetTarget(resource.transform.position);
         CurrentTask = UnitTask.Mine;
-        WaitingTask = UnitTask.None;
+        //WaitingTask = UnitTask.None;
         SetAttackTarget(resource);
 
         resource.OnDead.AddListener(ClearCurrentTask);

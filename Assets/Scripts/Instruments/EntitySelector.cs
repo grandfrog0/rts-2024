@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -9,6 +10,8 @@ using static UnityEngine.UI.CanvasScaler;
 
 public class EntitySelector : MonoBehaviour
 {
+    public static bool IgnoreNext { get; set; }
+
     [SerializeField] UnityEvent<HashSet<Entity>> onSelectionChanged = new();
 
     [SerializeField] LayerMask objectLayerMask;
@@ -20,6 +23,7 @@ public class EntitySelector : MonoBehaviour
     private Vector3 _selectionStart;
     private Vector3 _mouseDelta;
 
+   
     private void HandleObjectClick(Entity entity, bool revertSelected, bool multipleChoice)
     {
         if (!multipleChoice && _selectedEntities.Count == 1 && _selectedEntities.First() is Unit unit)
@@ -27,11 +31,13 @@ public class EntitySelector : MonoBehaviour
             if (unit is Archer archer && unit.WaitingTask == UnitTask.Attack && entity.TeamID != unit.TeamID)
             {
                 archer.SetAttackDestination(entity);
+                IgnoreNext = true;
                 return;
             }
             else if (unit is Healer healer && unit.WaitingTask == UnitTask.Heal && entity.TeamID == unit.TeamID)
             {
                 healer.SetHealDestination(entity);
+                IgnoreNext = true;
                 return;
             }
         }
@@ -74,6 +80,12 @@ public class EntitySelector : MonoBehaviour
     }
     public void MouseUp()
     {
+        if (IgnoreNext)
+        {
+            selectionField.sizeDelta = Vector2.zero;
+            return;
+        }
+
         Vector3 start = _selectionStart;
         Vector3 end = start + _mouseDelta;
 
@@ -86,7 +98,6 @@ public class EntitySelector : MonoBehaviour
             return;
         }
 
-        Debug.Log(rect);
         _selectedEntities.Clear();
         foreach (Entity entity in EntitySpawner.Entities)
         {
@@ -100,17 +111,17 @@ public class EntitySelector : MonoBehaviour
                 HandleObjectClick(entity, revertSelected: false, multipleChoice: true);
             }
         }
-        onSelectionChanged.Invoke(_selectedEntities);
+
+        if (!IgnoreNext)
+            onSelectionChanged.Invoke(_selectedEntities);
 
         // clear
         selectionField.sizeDelta = Vector2.zero;
     }
     public void HandleSingleClick()
     {
-        Debug.Log(0);
         if (EventSystem.current.IsPointerOverGameObject())
             return;
-        Debug.Log(1);
 
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
@@ -121,7 +132,10 @@ public class EntitySelector : MonoBehaviour
             if (hit.collider.TryGetComponent(out Entity entity))
             {
                 HandleObjectClick(entity, revertSelected: true, multipleChoice: multipleChoice);
-                onSelectionChanged.Invoke(_selectedEntities);
+
+                if (!IgnoreNext)
+                    onSelectionChanged.Invoke(_selectedEntities);
+
                 return;
             }
         }
@@ -137,13 +151,6 @@ public class EntitySelector : MonoBehaviour
         Vector3 bottomRight = Vector3.Max(screenPosition1, screenPosition2);
 
         return Rect.MinMaxRect(topLeft.x, topLeft.y, bottomRight.x, bottomRight.y);
-    }
-    private Vector3? ScreenToWorldPoint(Vector3 screenPoint)
-    {
-        if (Physics.Raycast(_camera.ScreenPointToRay(screenPoint), out RaycastHit hit, Mathf.Infinity, floorLayerMask, QueryTriggerInteraction.Ignore))
-            return hit.point;
-
-        return null;
     }
 
     private void Start()

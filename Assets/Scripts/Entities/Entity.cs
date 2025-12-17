@@ -78,9 +78,12 @@ public abstract class Entity : MonoBehaviour, IHurtable
         _isDead = true;
 
         //Debug.Log($"{this} ({TeamID}) was defeated by {enemy} ({enemy.TeamID}).");
-        gameObject.SetActive(false);
+        Invoke("Disactivate", 3);
 
         OnDead.Invoke();
         OnDead.RemoveAllListeners();
     }
+
+    private void Disactivate()
+        => gameObject.SetActive(false);
 }

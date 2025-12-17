@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class MouseTaskManager : MonoBehaviour
 {
-    private static global::MouseTaskManager _instance;
+    private static MouseTaskManager _instance;
 
     private static MouseTask _currentTask;
     public static MouseTask CurrentTask

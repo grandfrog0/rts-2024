@@ -13,6 +13,7 @@ public class TargetMovement : MonoBehaviour
 
     private NavMeshAgent _agent;
     private Coroutine _targetUpdate;
+    private IHurtable _target;
 
     private float _speed;
     public float Speed
@@ -27,8 +28,12 @@ public class TargetMovement : MonoBehaviour
         }
     }
 
+    private Animator _animator;
+
     public void SetTarget(Vector3 position)
     {
+        _animator.SetBool("isMoving", true);
+
         if (_agent.isOnNavMesh)
         {   
             _agent.isStopped = false;
@@ -44,6 +49,11 @@ public class TargetMovement : MonoBehaviour
         {
             Debug.Log("Is not on NavMesh!");
         }
+    }
+    public void SetTarget(IHurtable target)
+    {
+        _target = target;
+        SetTarget(target.Position);
     }
 
     private IEnumerator TargetUpdate(Vector3 targetPosition)
@@ -61,6 +71,11 @@ public class TargetMovement : MonoBehaviour
 
                 yield break;
             }
+            else if (_target != null)
+            {
+                targetPosition = _target.Position;
+                _agent.destination = targetPosition;
+            }
         }
     }
 
@@ -68,5 +83,7 @@ public class TargetMovement : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
         _agent.speed = Speed;
+
+        _animator = GetComponentInChildren<Animator>();
     }
 }

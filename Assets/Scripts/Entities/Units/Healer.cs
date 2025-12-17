@@ -9,7 +9,7 @@ public class Healer : Unit
         _targetMovement.SetTarget(hurtable.Position);
         SetAttackTarget(hurtable);
         CurrentTask = UnitTask.Heal;
-        WaitingTask = UnitTask.None;
+        //WaitingTask = UnitTask.None;
 
         hurtable.OnDead.AddListener(ClearCurrentTask);
     }

@@ -6,10 +6,10 @@ public class Archer : Unit
 {
     public void SetAttackDestination(IHurtable hurtable)
     {
-        _targetMovement.SetTarget(hurtable.Position);
+        _targetMovement.SetTarget(hurtable);
         SetAttackTarget(hurtable);
         CurrentTask = UnitTask.Attack;
-        WaitingTask = UnitTask.None;
+        //WaitingTask = UnitTask.None;
 
         hurtable.OnDead.AddListener(ClearCurrentTask);
     }

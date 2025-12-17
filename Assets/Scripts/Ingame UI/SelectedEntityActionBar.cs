@@ -13,16 +13,18 @@ public class SelectedEntityActionBar : MonoBehaviour
 
     public void OnEntityChanged(HashSet<Entity> entities)
     {
-        List<Entity> playerEntities = entities.Where(e => e.TeamID == 0).ToList();
+        if (entities.Count == 1)
+        {
+            Entity entity = entities.First();
+            if (entity.TeamID == 0)
+            {
+                SetEntity(entity);
+                return;
+            }
+        }
 
-        if (playerEntities.Count == 1)
-        {
-            SetEntity(playerEntities[0]);
-        }
-        else
-        {
-            ClearInterface();
-        }
+        // else
+        ClearInterface();
     }
 
     public void SetEntity(Entity entity)

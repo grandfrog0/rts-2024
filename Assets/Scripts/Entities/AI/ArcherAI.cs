@@ -19,10 +19,11 @@ public class ArcherAI : MonoBehaviour
             return;
 
         if (coll.TryGetComponent(out Entity other) && other.IsAlive && other.TeamID != _unit.TeamID && 
-            (_target == null || !_target.IsAlive || other.AttackPriority > _target.AttackPriority || Vector3.Distance(transform.position, _target.Position) > Vector3.Distance(transform.position, coll.transform.position)))
+            (_target == null || !_target.IsAlive || other.AttackPriority > _target.AttackPriority 
+            || (other.AttackPriority == _target.AttackPriority && Vector3.Distance(transform.position, _target.Position) > Vector3.Distance(transform.position, coll.transform.position))))
         {
-            Debug.Log((_target, other, _target.AttackPriority, other.AttackPriority));
             _target = other;
+            Debug.Log(_target);
             _unit.SetAttackDestination(other);
         } 
     }
