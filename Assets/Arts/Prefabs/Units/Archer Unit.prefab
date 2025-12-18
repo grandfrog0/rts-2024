@@ -111,6 +111,7 @@ MonoBehaviour:
   _attackPriority: 5
   _attackRange: 7.5
   _cooldown: 1
+  attackAnimationName: OnAttack
 --- !u!1001 &6142994324039388357
 PrefabInstance:
   m_ObjectHideFlags: 0

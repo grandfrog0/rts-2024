@@ -7,4 +7,11 @@ public class GenerationData
 
     public Vector2 PlayerBase;
     public List<Vector2> EnemyBases;
+
+    public List<Vector2> GetBases()
+    {
+        List<Vector2> bases = new List<Vector2>(EnemyBases);
+        bases.Insert(0, PlayerBase);
+        return bases;
+    }
 }

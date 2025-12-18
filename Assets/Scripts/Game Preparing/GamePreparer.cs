@@ -30,7 +30,7 @@ public class GamePreparer : MonoBehaviour
         cameraMovement.WorldSize = gameConfig.WorldSize;
         cameraMovement.transform.position = new Vector3(generationManager.PlayerBasePosition.x, 0, generationManager.PlayerBasePosition.y);
     
-        mapCamera.Init(generationData);
+        mapCamera.Init(generationData, gameConfig);
 
         floorTransform.localScale = new Vector3(gameConfig.WorldSize * 2, floorTransform.localScale.y, gameConfig.WorldSize * 2);
         surface.BuildNavMesh();

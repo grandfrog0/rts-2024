@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using Xenia.ColorPicker;
 
 public class GameSettingsWindow : MonoBehaviour
 {
@@ -17,7 +19,9 @@ public class GameSettingsWindow : MonoBehaviour
     private int _worldSize;
 
     [SerializeField] GamePreparer gamePreparer;
-    private GameConfig gameConfig;
+
+    [SerializeField] ColorPicker colorPicker;
+    private EnemyDataItem _currentDataItem;
 
     public void PrepareGame()
     {
@@ -43,6 +47,13 @@ public class GameSettingsWindow : MonoBehaviour
 
         playerDataItem.OnNameChanged("Игрок 1");
         playerDataItem.SetColor(Color.green);
+        playerDataItem.ColorClickAction = OpenColorPicker;
+
+        void OpenColorPicker()
+        {
+            colorPicker.Open();
+            _currentDataItem = playerDataItem;
+        }
     }
     public void OnHardnessChanged(int value)
         => _hardness = value;
@@ -75,8 +86,24 @@ public class GameSettingsWindow : MonoBehaviour
                 obj.SetColor(color);
 
                 obj.OnNameChanged("Противник " + (c + 1));
+
+                obj.ColorClickAction = OpenColorPicker;
+
+                void OpenColorPicker()
+                {
+                    colorPicker.Open();
+                    _currentDataItem = obj;
+                }
             }
             c = _enemyItems.Count;
+        }
+    }
+
+    public void OnColorPickerClosed()
+    {
+        if (_currentDataItem != null)
+        {
+            _currentDataItem.SetColor(colorPicker.CurrentColor);
         }
     }
 }

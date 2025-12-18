@@ -9,32 +9,45 @@ using UnityEngine.UI;
 public class SelectedEntityActionBar : MonoBehaviour
 {
     [SerializeField] GameObject buildActionsParent, mainActionsParent;
+    [SerializeField] GameObject unitButtons, buildingButtons;
     [SerializeField] GameObject builderButtons, archerButtons, healerButtons;
 
     public void OnEntityChanged(HashSet<Entity> entities)
     {
-        if (entities.Count == 1)
+        if (entities.All(x => x.TeamID == 0))
         {
-            Entity entity = entities.First();
-            if (entity.TeamID == 0)
-            {
-                SetEntity(entity);
-                return;
-            }
+            SetEntities(entities);
+            return;
         }
 
         // else
         ClearInterface();
     }
 
-    public void SetEntity(Entity entity)
+    public void SetEntities(HashSet<Entity> entities)
     {
         mainActionsParent.SetActive(true);
-        buildActionsParent.SetActive(entity is Builder);
 
-        builderButtons.SetActive(entity is Builder);
-        archerButtons.SetActive(entity is Archer);
-        healerButtons.SetActive(entity is Healer);
+        bool isUnit = false;
+        bool isBuilding = false;
+
+        if (isUnit = entities.All(x => x is Unit))
+        {
+            bool isBuilder = entities.All(x => x is Builder);
+            
+            buildActionsParent.SetActive(isBuilder);
+            builderButtons.SetActive(isBuilder);
+
+            archerButtons.SetActive(entities.All(x => x is Archer));
+            healerButtons.SetActive(entities.All(x => x is Healer));
+        }
+        else if (isBuilding = entities.All(x => x is Building))
+        {
+
+        }
+
+        unitButtons.SetActive(isUnit);
+        buildingButtons.SetActive(isBuilding);
     }
     public void ClearInterface()
     {

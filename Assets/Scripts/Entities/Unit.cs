@@ -141,7 +141,7 @@ public class Unit : Entity
 
     protected override void Die(Entity enemy)
     {
-        _animator.SetTrigger("OnDied");
+        _animator.SetBool("isDied", true);
 
         base.Die(enemy);
     }

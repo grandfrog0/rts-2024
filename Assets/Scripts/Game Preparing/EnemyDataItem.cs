@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 
 public class EnemyDataItem : MonoBehaviour
 {
+    public Action ColorClickAction;
     public EnemyData EnemyData { get; } = new();
     [SerializeField] Image image;
     [SerializeField] TMP_InputField inputField;
@@ -24,5 +26,11 @@ public class EnemyDataItem : MonoBehaviour
     {
         image.color = color;
         EnemyData.Color = color;
+    }
+
+    public void OnColorClick()
+    {
+        ColorClickAction?.Invoke();
+        Debug.Log("click!");
     }
 }

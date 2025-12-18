@@ -10,16 +10,17 @@ public class UnitTaskManager : MonoBehaviour
 {
     //private static bool _isAppliedNow = false;
     //public static bool IsAppliedNow { get => _isAppliedNow; set { _isAppliedNow = value; Debug.Log(_isAppliedNow); } }
-    public static Unit SelectedUnit { get; private set; }
+    public static List<Unit> SelectedUnits { get; private set; } = new List<Unit>();
     
     [SerializeField] UnityEvent<UnitTask> onUnitTaskChanged = new();
 
     private UnitTask WaitingTask
     {
-        get => SelectedUnit.WaitingTask;
+        get => SelectedUnits[0].WaitingTask;
         set
         {
-            SelectedUnit.WaitingTask = value;
+            foreach(var unit in SelectedUnits)
+                unit.WaitingTask = value;
 
             if (value == UnitTask.None)
                 EntitySelector.IgnoreNext = false;
@@ -29,7 +30,7 @@ public class UnitTaskManager : MonoBehaviour
     }
     public void ToggleTask(string taskName)
     {
-        if (SelectedUnit == null)
+        if (SelectedUnits.Count == 0)
             return;
 
         UnitTask task = Enum.Parse<UnitTask>(taskName);
@@ -46,14 +47,14 @@ public class UnitTaskManager : MonoBehaviour
 
     public void OnSelectionChanged(HashSet<Entity> entities)
     {
-        List<Entity> playerEntitites = entities.Where(e => e.TeamID == 0).ToList();
-        if (playerEntitites.Count == 1 && playerEntitites[0] is Unit unit)
+        if (entities.All(x => x is Unit && x.TeamID == 0))
         {
-            SelectedUnit = unit;
+            SelectedUnits = entities.Select(x => (Unit)x).ToList();
         }
-        else if (playerEntitites.Count == 0 && SelectedUnit != null)
+        else
         {
             WaitingTask = UnitTask.None;
+            SelectedUnits.Clear();
         }
     }
 }
