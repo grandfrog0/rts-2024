@@ -17,8 +17,8 @@ public abstract class Entity : MonoBehaviour, IHurtable
         get => maxHealth;
         protected set => maxHealth = value;
     }
-    public float Health 
-    { 
+    public float Health
+    {
         get => _health;
         protected set
         {
@@ -26,18 +26,19 @@ public abstract class Entity : MonoBehaviour, IHurtable
             OnHealthChanged.Invoke();
         }
     }
+    public float HealthPercent => Health / MaxHealth;
     public bool IsAlive => Health > 0;
+    public virtual bool IsReady => IsAlive;
     public Vector3 Position => transform.position;
 
     [SerializeField] float _attackStrength = 1;
     public float AttackStrength { get => _attackStrength; protected set => _attackStrength = value; }
- 
+
     [Header("Main information")]
     public string ConfigName;
     public Sprite Icon;
     public string Name;
-    [SerializeField] float _size = 1f;
-    public float Size => _size;
+    public EntityModelInfo Model;
     private int _teamID = -1;
     public int TeamID
     {

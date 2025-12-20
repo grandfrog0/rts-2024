@@ -3309,10 +3309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3928290521851066025}
-  - component: {fileID: -7820373271157447542}
-  - component: {fileID: 120120507516054184}
   - component: {fileID: 7199279132924448108}
-  - component: {fileID: 6408368526159480092}
   m_Layer: 6
   m_Name: town_center_model
   m_TagString: Untagged
@@ -3399,46 +3396,6 @@ Transform:
   - {fileID: 3159455065938725233}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &-7820373271157447542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3931184038110116919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7be4ce702a1f09d4fbf2eca4a94d3745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 200
-  _attackStrength: 1
-  ConfigName: 
-  Icon: {fileID: 21300000, guid: 42e13815d03e4814fab2ee1beb04d1c1, type: 3}
-  Name: Town center
-  _size: 50
-  _attackPriority: 10
---- !u!65 &120120507516054184
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3931184038110116919}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 40, y: 30, z: 20}
-  m_Center: {x: 0, y: 5, z: 0}
 --- !u!205 &7199279132924448108
 LODGroup:
   m_ObjectHideFlags: 0
@@ -3534,22 +3491,6 @@ LODGroup:
     - renderer: {fileID: 4862773132238076762}
     - renderer: {fileID: 6159833077850567572}
   m_Enabled: 1
---- !u!208 &6408368526159480092
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3931184038110116919}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 20, y: 15, z: 1}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 5, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &4046317012067538984
 GameObject:
   m_ObjectHideFlags: 0

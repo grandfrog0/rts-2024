@@ -18,7 +18,7 @@ public class Unit : Entity
     public float Cooldown { get => _cooldown; protected set => _cooldown = value; }
 
     // CD
-    public bool InCooldown { get; private set; }
+    public bool InCooldown { get; protected set; }
     private Coroutine _attackRoutine;
     private IHurtable _attackTarget;
 
@@ -40,8 +40,8 @@ public class Unit : Entity
     public UnitTask WaitingTask { get; set; } = UnitTask.None;
 
     // Animator
-    [SerializeField] string attackAnimationName = "OnAttack";
-    private Animator _animator;
+    public string attackAnimationName = "OnAttack";
+    protected Animator _animator;
 
     public void BreakTask()
     {
@@ -91,7 +91,7 @@ public class Unit : Entity
     {
         while (true)
         {
-            if (_attackTarget == null || !_attackTarget.IsAlive)
+            if (_attackTarget == null || !_attackTarget.IsReady)
             {
                 _attackRoutine = null;
                 yield break;
@@ -141,7 +141,7 @@ public class Unit : Entity
 
     protected override void Die(Entity enemy)
     {
-        _animator.SetBool("isDied", true);
+        _animator.SetBool("IsDied", true);
 
         base.Die(enemy);
     }

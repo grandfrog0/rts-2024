@@ -43,7 +43,7 @@ public class ResourceGenerator : MonoBehaviour
 
                 GameObject resource = _map[x, y] > resourceThreshold ? rockPrefab : treePrefab;
 
-                Instantiate(resource, new Vector3(x - halfWorldSize, 0, y - halfWorldSize), Quaternion.identity/*Quaternion.Euler(0, Random.Range(0, 360), 0)*/, resourcesParent);
+                Instantiate(resource, new Vector3(x - halfWorldSize, 0, y - halfWorldSize), Quaternion.Euler(0, Random.Range(0, 360), 0), resourcesParent);
             }
         }
     }

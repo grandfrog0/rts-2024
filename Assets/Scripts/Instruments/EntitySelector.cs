@@ -26,17 +26,29 @@ public class EntitySelector : MonoBehaviour
    
     private void HandleObjectClick(Entity entity, bool revertSelected, bool multipleChoice)
     {
-        if (!multipleChoice && _selectedEntities.Count == 1 && _selectedEntities.First() is Unit unit)
+        if (revertSelected && _selectedEntities.Count != 0 && _selectedEntities.All(x => x is Unit))
         {
-            if (unit is Archer archer && unit.WaitingTask == UnitTask.Attack && entity.TeamID != unit.TeamID)
+            if (_selectedEntities.All(x => x is Archer archer && archer.WaitingTask == UnitTask.Attack && entity.TeamID != archer.TeamID))
             {
-                archer.SetAttackDestination(entity);
+                foreach(var e in _selectedEntities)
+                    ((Archer)e).SetAttackDestination(entity);
+
                 IgnoreNext = true;
                 return;
             }
-            else if (unit is Healer healer && unit.WaitingTask == UnitTask.Heal && entity.TeamID == unit.TeamID)
+            else if (_selectedEntities.All(x => x is Healer healer && healer.WaitingTask == UnitTask.Heal && entity.TeamID == healer.TeamID))
             {
-                healer.SetHealDestination(entity);
+                foreach (var e in _selectedEntities)
+                    ((Healer)e).SetHealDestination(entity);
+
+                IgnoreNext = true;
+                return;
+            }
+            else if (entity is Building building && entity.HealthPercent < 1 && _selectedEntities.All(x => x is Builder builder && (builder.WaitingTask is UnitTask.Fix or UnitTask.Build) && entity.TeamID == builder.TeamID))
+            {
+                foreach (var e in _selectedEntities)
+                    ((Builder)e).SetFixDestination(building);
+
                 IgnoreNext = true;
                 return;
             }

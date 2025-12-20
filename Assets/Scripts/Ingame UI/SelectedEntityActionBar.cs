@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Schema;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.ObjectChangeEventStream;
 
 public class SelectedEntityActionBar : MonoBehaviour
 {
@@ -14,7 +16,7 @@ public class SelectedEntityActionBar : MonoBehaviour
 
     public void OnEntityChanged(HashSet<Entity> entities)
     {
-        if (entities.All(x => x.TeamID == 0))
+        if (entities.Count != 0 && entities.All(x => x.TeamID == 0))
         {
             SetEntities(entities);
             return;
@@ -28,26 +30,40 @@ public class SelectedEntityActionBar : MonoBehaviour
     {
         mainActionsParent.SetActive(true);
 
-        bool isUnit = false;
-        bool isBuilding = false;
+        // unit || building
+        unitButtons.SetActive(false);
+        buildingButtons.SetActive(false);
 
-        if (isUnit = entities.All(x => x is Unit))
+        // builder
+        buildActionsParent.SetActive(false);
+        builderButtons.SetActive(false);
+
+        // archer || healer
+        archerButtons.SetActive(false);
+        healerButtons.SetActive(false); 
+        
+        if (entities.All(x => x is Unit))
         {
-            bool isBuilder = entities.All(x => x is Builder);
-            
-            buildActionsParent.SetActive(isBuilder);
-            builderButtons.SetActive(isBuilder);
+            unitButtons.SetActive(true);
 
-            archerButtons.SetActive(entities.All(x => x is Archer));
-            healerButtons.SetActive(entities.All(x => x is Healer));
+            if (entities.All(x => x is Builder))
+            {
+                buildActionsParent.SetActive(true);
+                builderButtons.SetActive(true);
+            }
+            else if (entities.All(x => x is Archer))
+            {
+                archerButtons.SetActive(true);
+            }
+            else if (entities.All(x => x is Healer))
+            {
+                healerButtons.SetActive(true);
+            }
         }
-        else if (isBuilding = entities.All(x => x is Building))
+        else if (entities.All(x => x is Building))
         {
-
+            buildingButtons.SetActive(true);
         }
-
-        unitButtons.SetActive(isUnit);
-        buildingButtons.SetActive(isBuilding);
     }
     public void ClearInterface()
     {

@@ -39,13 +39,14 @@ public class BaseGenerator : MonoBehaviour
         float angleDelta = -360 / _basesNames.Count;
 
         float currentAngle = Random.Range(0, 360);
-        Vector2 currentPos = Quaternion.Euler(0, 0, currentAngle) * Vector2.up * (_worldSize / 2 - _baseRange * 8);
+        float distanceMultiplier = (_worldSize / 2 - _baseRange * 8);
+        Vector2 currentPos = Quaternion.Euler(0, 0, currentAngle) * Vector2.up * distanceMultiplier;
         _basesPositions.Add(currentPos);
         
         for (int i = 0; i < _basesNames.Count - 1; i++)
         {
             currentAngle += angleDelta;
-            currentPos = Quaternion.Euler(0, 0, currentAngle) * Vector2.up * (_worldSize / 2 - _baseRange * 8);
+            currentPos = Quaternion.Euler(0, 0, currentAngle) * Vector2.up * distanceMultiplier;
             _basesPositions.Add(currentPos);
         }
     }
@@ -54,14 +55,15 @@ public class BaseGenerator : MonoBehaviour
         Vector2 position;
         string title;
 
+        Quaternion rotation = Quaternion.Euler(0, 180, 0);
+        Quaternion towerRotation = Quaternion.Euler(0, 0, 0);
+
         for (int i = 0; i < _basesPositions.Count; i++)
         {
             position = _basesPositions[i];
             title = _basesNames[i];
 
-            Quaternion rotation = Quaternion.Euler(0, 180, 0);
-
-            EntitySpawner.Spawn(townHall, new Vector3(position.x, 1, position.y), rotation, i);
+            EntitySpawner.Spawn(townHall, new Vector3(position.x, 1, position.y), towerRotation, i);
 
             EntitySpawner.Spawn(worker, new Vector3(position.x - 2, 0, position.y - 3), rotation, i);
             EntitySpawner.Spawn(worker, new Vector3(position.x - 1, 0, position.y - 3), rotation, i);

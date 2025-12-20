@@ -12,15 +12,18 @@ public class SelectionEffect : MonoBehaviour
     {
         ClearSelections();
 
-        List<Entity> playerEntities = entities.Where(e => e.TeamID == 0).ToList();
-
-        foreach (Entity entity in playerEntities)
+        foreach (Entity entity in entities)
         {
-            GameObject selection = Instantiate(selectionPrefab, entity.transform.position, selectionPrefab.transform.rotation, entity.transform);
-            selection.transform.position = new Vector3(selection.transform.position.x, 0.1f, selection.transform.position.z);
-            selection.transform.localScale = new Vector3(entity.Size, entity.Size, 1);
-            _selections.Add(selection);
+            _selections.Add(SpawnSelection(entity.transform, entity.Model.Size));
         }
+    }
+
+    public GameObject SpawnSelection(Transform target, float size)
+    {
+        GameObject selection = Instantiate(selectionPrefab, target.position, selectionPrefab.transform.rotation, target);
+        selection.transform.position = new Vector3(selection.transform.position.x, 0.1f, selection.transform.position.z);
+        selection.transform.localScale = new Vector3(size, size, 1);
+        return selection;
     }
 
     private void ClearSelections()

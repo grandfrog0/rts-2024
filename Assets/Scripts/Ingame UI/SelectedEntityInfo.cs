@@ -46,7 +46,7 @@ public class SelectedEntityInfo : MonoBehaviour
             EntityInfoMini info = Instantiate(entityInfoMini, entitiesInfoWindow.transform);
             info.Icon.sprite = entity.Icon;
             info.HealthBar.fillAmount = entity.Health / entity.MaxHealth;
-            Debug.Log(entity.TeamID);
+
             info.ColorViewer.color = entity.TeamID != -1 ? TeamColors[entity.TeamID] : Color.clear;
             info.Subscribe(entity);
             _entities.Add(info);

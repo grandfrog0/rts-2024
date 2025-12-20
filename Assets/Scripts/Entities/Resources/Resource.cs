@@ -27,7 +27,7 @@ public class Resource : MonoBehaviour, IHurtable
         }
     }
 
-    public bool IsAlive => Health > 0;
+    public bool IsReady => Health > 0;
     public Vector3 Position => transform.position;
 
     public string ResourceName;

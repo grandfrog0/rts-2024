@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 6053493472952860412}
   - component: {fileID: 6050932007116493679}
   - component: {fileID: 3052685636030102784}
-  - component: {fileID: 1780384459736525161}
   - component: {fileID: 4075288167295947480}
   - component: {fileID: 570564152056303919}
   - component: {fileID: 5542985090462049391}
-  - component: {fileID: 8566993992192188652}
+  - component: {fileID: 4671140347348609707}
+  - component: {fileID: 1411477870199236797}
   m_Layer: 6
   m_Name: Unit Parent
   m_TagString: Untagged
@@ -32,13 +32,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8404165612679114557}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &6053493472952860412
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -90,22 +90,11 @@ MonoBehaviour:
   ConfigName: 
   Icon: {fileID: 21300000, guid: 2d9f93e1c80a5fa4aaaa6a3e0dfeb5d3, type: 3}
   Name: Villager
-  _size: 1
+  Model: {fileID: 4671140347348609707}
   _attackPriority: 0
   _attackRange: 1
   _cooldown: 1
---- !u!114 &1780384459736525161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8404165612679114557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 859662cc414fdcb4bab48586d06318e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  attackAnimationName: OnAttack
 --- !u!135 &4075288167295947480
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -119,7 +108,7 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 439
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -177,7 +166,7 @@ CapsuleCollider:
   m_Height: 0.75
   m_Direction: 1
   m_Center: {x: -0, y: 0.4, z: -0}
---- !u!114 &8566993992192188652
+--- !u!114 &4671140347348609707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,15 +175,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8404165612679114557}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc1f6c1b5cbbf34087dea382dd1957b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3562aee40ed87014eb3cdf5496e71b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  _attackStrength: 1
-  ConfigName: 
-  Icon: {fileID: 0}
-  Name: 
-  _size: 1
-  _attackPriority: 0
-  _attackRange: 1
-  _cooldown: 1
+  ModelPrefab: {fileID: 0}
+  Size: 1
+--- !u!114 &1411477870199236797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8404165612679114557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 859662cc414fdcb4bab48586d06318e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
