@@ -17,6 +17,7 @@ public class ArcherAI : MonoBehaviour
     {
         if (!_unit || _unit.TeamID == 0)
             return;
+        /*
         Debug.Log("CAN BE TARGET: " + coll.gameObject);
         Debug.Log("TARGET IS " + _target);
         if (_target)
@@ -36,14 +37,15 @@ public class ArcherAI : MonoBehaviour
         Debug.Log(coll.TryGetComponent(out Entity o6) && o6.IsReady && o6.TeamID != _unit.TeamID);
         Debug.Log(coll.TryGetComponent(out Entity o7) && o7.IsReady);
         Debug.Log(coll.TryGetComponent(out Entity _));
+        */
 
 
         if (coll.TryGetComponent(out Entity other) && other.IsReady && other.TeamID != _unit.TeamID &&
             (_target == null || !_target.IsReady || other.AttackPriority > _target.AttackPriority
             || (other.AttackPriority == _target.AttackPriority && Vector3.Distance(transform.position, _target.Position) > Vector3.Distance(transform.position, coll.transform.position))))
         {
-            _target = o1;
-            _unit.SetAttackDestination(o1);
+            _target = other;
+            _unit.SetAttackDestination(other);
         } 
     }
     private void OnTriggerExit(Collider other)
