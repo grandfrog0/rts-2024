@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class GamePreparer : MonoBehaviour
 {
+    public static NavMeshSurface Surface;
+
     [SerializeField] GenerationManager generationManager;
     [SerializeField] CameraMovement cameraMovement;
     [SerializeField] EntitySpawner spawner;
@@ -22,7 +24,10 @@ public class GamePreparer : MonoBehaviour
         EntitySpawner.OnUnitsCountChanged.AddListener((int teamID, List<Unit> units) =>
         {
             if (teamID == 0)
-                inventory.Init("units", units.Count);
+            {
+                inventory.Init();
+                Inventory.Player.SetCount("units", units.Count);
+            }
         });
 
         generationManager.WorldSize = gameConfig.WorldSize;
@@ -33,6 +38,8 @@ public class GamePreparer : MonoBehaviour
         mapCamera.Init(generationData, gameConfig);
 
         floorTransform.localScale = new Vector3(gameConfig.WorldSize * 2, floorTransform.localScale.y, gameConfig.WorldSize * 2);
+
+        Surface = surface;
         surface.BuildNavMesh();
 
         selectedEntityInfo.TeamColors = gameConfig.EnemiesData.Select(x => x.Color).ToList();

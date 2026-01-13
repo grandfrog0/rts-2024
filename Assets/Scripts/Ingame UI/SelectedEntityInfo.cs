@@ -5,16 +5,21 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 using static UnityEngine.EventSystems.EventTrigger;
 
 public class SelectedEntityInfo : MonoBehaviour
 {
-    [SerializeField] GameObject entityInfoWindow, entitiesInfoWindow, resourcesViewWindow;
+    [SerializeField] GameObject entityInfoWindow, entitiesInfoWindow;
     // entity
     [SerializeField] Image entityImage, entityHealthBar, entityColorViewer;
     [SerializeField] TMP_Text entityTitle, entityHealthBarText;
     [SerializeField] Image defaultHealthBar, fixHeathBar;
     private Entity _curEntity;
+    private Builder _builder;
+    // entity resources
+    [SerializeField] GameObject resourcesViewWindow;
+    [SerializeField] TMP_Text woodResourceText, stoneResourceText;
     // entities
     [SerializeField] EntityInfoMini entityInfoMini;
     private List<EntityInfoMini> _entities = new();
@@ -94,7 +99,29 @@ public class SelectedEntityInfo : MonoBehaviour
 
         UpdateEntityHealth();
 
-        resourcesViewWindow.SetActive(entity is Builder);
+        if (_builder != null)
+        {
+            _builder.inventory.GetItem("wood").Text =
+            _builder.inventory.GetItem("stone").Text = null;
+        }
+
+        if ((_builder = entity as Builder) != null)
+        {
+            resourcesViewWindow.SetActive(true);
+
+            woodResourceText.text = _builder.inventory.GetCount("wood").ToString();
+            stoneResourceText.text = _builder.inventory.GetCount("stone").ToString();
+
+            _builder.inventory.GetItem("wood").Text = woodResourceText;
+            _builder.inventory.GetItem("stone").Text = stoneResourceText;
+        }
+        else
+        {
+            resourcesViewWindow.SetActive(false);
+
+            _builder.inventory.GetItem("wood").Text =
+            _builder.inventory.GetItem("stone").Text = null;
+        }
     }
 
     public void UpdateEntityHealth()

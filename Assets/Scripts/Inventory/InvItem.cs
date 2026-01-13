@@ -14,9 +14,9 @@ public class InvItem
         set
         {
             _count = value;
-            _text.text = _count.ToString();
+            if (Text) Text.text = _count.ToString();
         }
     }
     public bool IsResource;
-    [SerializeField] TMP_Text _text;
+    public TMP_Text Text;
 }

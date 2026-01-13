@@ -5,34 +5,16 @@ using System.Diagnostics.Contracts;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class Inventory : MonoBehaviour
 {
-    public static Inventory instance { get; private set; }
+    public static UnitInventory Player { get; } = new();
 
     [SerializeField] List<InvItem> invItems = new List<InvItem>();
-    private Dictionary<string, InvItem> _items;
     
-    public void Init(string name, int count)
+    public void Init()
     {
-        instance = this;
-
-        _items = new();
-        foreach(InvItem item in invItems)
-            _items.Add(item.Name, item);
-
-        SetCount(name, count);
-    }
-    public int GetCount(string name)
-    {
-        return _items[name].Count;
-    }
-    public void AddCount(string name, int value)
-    {
-        _items[name].Count += value;
-    }
-    public void SetCount(string name, int value)
-    {
-        _items[name].Count = value;
+        Player.Init(invItems);
     }
 }

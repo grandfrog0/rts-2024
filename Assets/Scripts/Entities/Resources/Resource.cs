@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Events;
 
 public class Resource : MonoBehaviour, IHurtable
@@ -44,13 +45,13 @@ public class Resource : MonoBehaviour, IHurtable
         Debug.Log($"{this} was damaged. ({Health})");
 
         if (Health <= 0 && !_isBroken)
-            BreakResource();
+            BreakResource(enemy as Builder);
     }
-    protected virtual void BreakResource()
+    protected virtual void BreakResource(Builder builder)
     {
         _isBroken = true;
 
-        Inventory.instance.AddCount(ResourceName, 1);
+        builder.AddResourceBroken(ResourceName);
         gameObject.SetActive(false);
 
         OnDead.Invoke();

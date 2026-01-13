@@ -120,7 +120,7 @@ public class Unit : Entity
         base.Init(teamID);
 
         _targetMovement = GetComponent<TargetMovement>();
-        _targetMovement.onTargetGoaled = OnTargetGoaled;
+        _targetMovement.onTargetGoaled += OnTargetGoaled;
 
         _animator = GetComponentInChildren<Animator>();
     }

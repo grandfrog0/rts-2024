@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -9,7 +10,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class TargetMovement : MonoBehaviour
 {
-    public Action onTargetGoaled;
+    public event Action onTargetGoaled;
 
     private NavMeshAgent _agent;
     private Coroutine _targetUpdate;
@@ -39,7 +40,7 @@ public class TargetMovement : MonoBehaviour
             _agent.isStopped = false;
             _agent.destination = position;
 
-            if (_targetUpdate != null)
+            if (!_targetUpdate.IsUnityNull())
             {
                 StopCoroutine(_targetUpdate);
             }
@@ -66,8 +67,7 @@ public class TargetMovement : MonoBehaviour
             {
                 _agent.isStopped = true;
 
-                if (onTargetGoaled != null)
-                    onTargetGoaled();
+                onTargetGoaled?.Invoke();
 
                 yield break;
             }
