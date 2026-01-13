@@ -596,6 +596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5281403237424375787}
+  - component: {fileID: 3449831392491913101}
   m_Layer: 6
   m_Name: university_model
   m_TagString: Untagged
@@ -645,6 +646,58 @@ Transform:
   - {fileID: 9190609168031990360}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &3449831392491913101
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143550019348336533}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.0009965897, y: 1.3357928, z: 0.0819931}
+  m_Size: 3.0129304
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.03
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 8624802801835335309}
+    - renderer: {fileID: 2888081448309945495}
+    - renderer: {fileID: 626894603077642382}
+    - renderer: {fileID: 5615740359093948186}
+    - renderer: {fileID: 4173971066499900957}
+    - renderer: {fileID: 1961409616455756287}
+    - renderer: {fileID: 7592397903565840543}
+    - renderer: {fileID: 5720326412936210371}
+    - renderer: {fileID: 5932812360413439682}
+    - renderer: {fileID: 5792641775737484302}
+    - renderer: {fileID: 7142661667904283757}
+    - renderer: {fileID: 1386226743238426337}
+    - renderer: {fileID: 1154533999255122326}
+    - renderer: {fileID: 4119608795631564835}
+    - renderer: {fileID: 5221342633409921663}
+    - renderer: {fileID: 5594510799695665499}
+    - renderer: {fileID: 8541731397147977222}
+    - renderer: {fileID: 4278228243652092692}
+    - renderer: {fileID: 518388006324753165}
+    - renderer: {fileID: 419987662239371444}
+    - renderer: {fileID: 2679833535020158636}
+    - renderer: {fileID: 4084667304642347764}
+    - renderer: {fileID: 3618378125492541327}
+    - renderer: {fileID: 579254690539362104}
+    - renderer: {fileID: 7650876762540212634}
+    - renderer: {fileID: 6237536554888312599}
+    - renderer: {fileID: 2989184750832341316}
+    - renderer: {fileID: 5143273735999124209}
+    - renderer: {fileID: 3008241901615527987}
+    - renderer: {fileID: 6220867264694771296}
+    - renderer: {fileID: 622566471377056963}
+    - renderer: {fileID: 7099585723148764560}
+    - renderer: {fileID: 8052636814036515127}
+    - renderer: {fileID: 430769482807647193}
+  m_Enabled: 1
 --- !u!1 &2221652293885669729
 GameObject:
   m_ObjectHideFlags: 0

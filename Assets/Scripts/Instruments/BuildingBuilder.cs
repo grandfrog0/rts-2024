@@ -14,9 +14,12 @@ public class BuildingBuilder : MonoBehaviour
     private GameObject _preparingBuildingModel;
     private Vector3 _offset;
     private bool _inGoodPlace;
+    private Vector3 _lastClickPos;
 
     [SerializeField] SelectionEffect selectionEffect;
     private Renderer _selectionRenderer;
+
+    [SerializeField] UnitTaskManager unitTaskManager;
 
     /// <returns>Building prefab | null</returns>
     public Building PrepareSpawn(string buildingName)
@@ -27,12 +30,14 @@ public class BuildingBuilder : MonoBehaviour
             return _preparingBuilding;
         }
 
-        Building prefab = buildings.First(x => x.Name == buildingName);
+        Building prefab = buildings.First(x => x.ConfigName == buildingName);
         _preparingBuilding = prefab;
 
         Vector3 screenPosition = new Vector3(Screen.width / 2, Screen.height / 2);
         Vector3 position = GetClickPosition(screenPosition);
-        _offset = prefab.Model.ModelPrefab.transform.localPosition + Vector3.up;
+        _lastClickPos = position;
+
+        _offset = prefab.Model.ModelPrefab.transform.localPosition;
         _preparingBuildingModel = Instantiate(prefab.Model.ModelPrefab, position + _offset, prefab.Model.ModelPrefab.transform.rotation, buildingParent);
 
         _selectionRenderer = selectionEffect.SpawnSelection(_preparingBuildingModel.transform, prefab.Model.Size / _preparingBuildingModel.transform.localScale.x).GetComponent<Renderer>();
@@ -57,10 +62,24 @@ public class BuildingBuilder : MonoBehaviour
         if (!_inGoodPlace)
             return null;
 
-        Entity result = EntitySpawner.Spawn(_preparingBuilding, _preparingBuildingModel.transform.position, _preparingBuilding.transform.rotation, 0);
+        Debug.Log(_preparingBuildingModel.transform.position);
+        Entity result = EntitySpawner.Spawn(_preparingBuilding, _preparingBuildingModel.transform.position - _offset, _preparingBuilding.transform.rotation, 0);
         CancelPreparing();
 
         return (Building)result;
+    }
+    public void TryPlaceAndPrepare(List<Builder> builders)
+    {
+        Building b = TryPlace();
+
+        if (b != null)
+        {
+            b.PrepareToBuild();
+            foreach (var builder in builders)
+                builder.SetFixDestination(b);
+        }
+
+        unitTaskManager.EndBuild();
     }
 
     private Vector3 GetClickPosition(Vector3 pos)
@@ -78,9 +97,16 @@ public class BuildingBuilder : MonoBehaviour
             return;
 
         Vector3 mousePosition = Input.mousePosition;
-        _preparingBuildingModel.transform.position = GetClickPosition(mousePosition) + _offset;
-
+        Vector3 pos = GetClickPosition(mousePosition) + _offset;
+        _preparingBuildingModel.transform.position = pos;
         _inGoodPlace = !HasObstacles(mousePosition);
+
+        if (Vector3.Distance(pos, _lastClickPos) < 0.5f)
+        {
+            TryPlaceAndPrepare(UnitTaskManager.SelectedBuilders);
+            return;
+        }
         _selectionRenderer.material.color = _inGoodPlace ? Color.green : Color.red;
+        _lastClickPos = pos;
     }
 }

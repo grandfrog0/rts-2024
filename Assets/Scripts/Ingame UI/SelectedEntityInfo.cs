@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class SelectedEntityInfo : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class SelectedEntityInfo : MonoBehaviour
     // entity
     [SerializeField] Image entityImage, entityHealthBar, entityColorViewer;
     [SerializeField] TMP_Text entityTitle, entityHealthBarText;
+    [SerializeField] Image defaultHealthBar, fixHeathBar;
     private Entity _curEntity;
     // entities
     [SerializeField] EntityInfoMini entityInfoMini;
@@ -85,6 +87,11 @@ public class SelectedEntityInfo : MonoBehaviour
         entityImage.sprite = entity.Icon;
         entityTitle.text = entity.Name;
         entityColorViewer.color = entity.TeamID != -1 ? TeamColors[entity.TeamID] : Color.clear;
+
+        entityHealthBar.gameObject.SetActive(false);
+        entityHealthBar = entity is Building { IsBuilt: false } ? fixHeathBar : defaultHealthBar;
+        entityHealthBar.gameObject.SetActive(true);
+
         UpdateEntityHealth();
 
         resourcesViewWindow.SetActive(entity is Builder);
@@ -92,6 +99,10 @@ public class SelectedEntityInfo : MonoBehaviour
 
     public void UpdateEntityHealth()
     {
+        entityHealthBar.gameObject.SetActive(false);
+        entityHealthBar = _curEntity is Building { IsBuilt: false } ? fixHeathBar : defaultHealthBar;
+        entityHealthBar.gameObject.SetActive(true);
+
         entityHealthBar.fillAmount = _curEntity.Health / _curEntity.MaxHealth;
         entityHealthBarText.text = $"{_curEntity.Health}/{_curEntity.MaxHealth}";
     }

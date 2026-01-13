@@ -1725,6 +1725,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3928290521851066025}
+  - component: {fileID: 2873377106467561037}
   m_Layer: 6
   m_Name: granary_model
   m_TagString: Untagged
@@ -1770,6 +1771,58 @@ Transform:
   - {fileID: 2378378316036828444}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!205 &2873377106467561037
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931184038110116919}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.074979305, y: 1.9645232, z: -0.23866189}
+  m_Size: 4.0128846
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.03
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5009793974543028124}
+    - renderer: {fileID: 1984009399526127655}
+    - renderer: {fileID: 9075670259785769266}
+    - renderer: {fileID: 4380005937618149292}
+    - renderer: {fileID: 1683880151738445905}
+    - renderer: {fileID: 3849975898741946550}
+    - renderer: {fileID: 3360725527556167755}
+    - renderer: {fileID: 8237158481700859594}
+    - renderer: {fileID: 1730357458676117509}
+    - renderer: {fileID: 1267988001327060829}
+    - renderer: {fileID: 3556142851609716281}
+    - renderer: {fileID: 9222660259476960706}
+    - renderer: {fileID: 5040881199694805636}
+    - renderer: {fileID: 3078658003542948306}
+    - renderer: {fileID: 8984208767413159287}
+    - renderer: {fileID: 864581314591180124}
+    - renderer: {fileID: 1229122602265760098}
+    - renderer: {fileID: 6298641652498311943}
+    - renderer: {fileID: 8063745619008768703}
+    - renderer: {fileID: 4788125029847967813}
+    - renderer: {fileID: 1335018921937824313}
+    - renderer: {fileID: 1894409308946376161}
+    - renderer: {fileID: 9203263192912548049}
+    - renderer: {fileID: 3642954476023413786}
+    - renderer: {fileID: 1704825286852381344}
+    - renderer: {fileID: 7753152352567617350}
+    - renderer: {fileID: 4074581933470130146}
+    - renderer: {fileID: 453428661167184315}
+    - renderer: {fileID: 7120441452427362310}
+    - renderer: {fileID: 182755190718471009}
+    - renderer: {fileID: 2369705934447669759}
+    - renderer: {fileID: 8029705512052478121}
+    - renderer: {fileID: 1288526700163723869}
+    - renderer: {fileID: 3551825694097020531}
+  m_Enabled: 1
 --- !u!1 &4315044987307610154
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,5 +3066,10 @@ PrefabInstance:
 --- !u!4 &5125775782676516968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4ba5359554d8b0544bc35b50c2c5d5cd, type: 3}
+  m_PrefabInstance: {fileID: 4659203164862855043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6298641652498311943 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 4ba5359554d8b0544bc35b50c2c5d5cd, type: 3}
   m_PrefabInstance: {fileID: 4659203164862855043}
   m_PrefabAsset: {fileID: 0}

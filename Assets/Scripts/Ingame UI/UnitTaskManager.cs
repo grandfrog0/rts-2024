@@ -53,19 +53,11 @@ public class UnitTaskManager : MonoBehaviour
         {
             bool isBuildingEnd = false;
 
-            if (task == UnitTask.Fix && SelectedBuilders.Count != 0)
-            {
-                Building b = buildingBuilder.TryPlace();
-                if (b != null)
-                {
-                    b.PrepareToBuild();
-                    foreach (var builder in SelectedBuilders)
-                        builder.SetFixDestination(b);
-                }
-
-                isBuildingEnd = true;
-                WaitingTask = UnitTask.None;
-            }
+            //if (task == UnitTask.Fix && SelectedBuilders.Count != 0)
+            //{
+                //buildingBuilder.TryPlaceAndPrepare(SelectedBuilders);
+                //isBuildingEnd = true;
+            //}
 
             WaitingBuildingTask = null;
             buildingBuilder.CancelPreparing();
@@ -84,13 +76,18 @@ public class UnitTaskManager : MonoBehaviour
             WaitingTask = task;
         }
     }
+    public void EndBuild()
+    {
+        WaitingTask = UnitTask.None;
+    }
+
     public void ToggleBuildingTask(string buildingName)
     {
         if (SelectedUnits.Count == 0)
             return;
 
         WaitingTask = UnitTask.Build;
-        if (WaitingBuildingTask != null && WaitingBuildingTask.Name == buildingName)
+        if (WaitingBuildingTask != null && WaitingBuildingTask.ConfigName == buildingName)
         {
             WaitingTask = UnitTask.None;
             WaitingBuildingTask = null;

@@ -344,6 +344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 678430460160886476}
+  - component: {fileID: 7628189500996047767}
   m_Layer: 6
   m_Name: siege_factory_model
   m_TagString: Untagged
@@ -400,6 +401,58 @@ Transform:
   - {fileID: 5857141825485668615}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &7628189500996047767
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131050632274006739}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -1.3654718, y: 15.041841, z: -0.40000153}
+  m_Size: 41.35653
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.03
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 116020063196784624}
+    - renderer: {fileID: 5813266805282601046}
+    - renderer: {fileID: 2158222137155468670}
+    - renderer: {fileID: 8316765881334977412}
+    - renderer: {fileID: 469407706}
+    - renderer: {fileID: 2534268017592533201}
+    - renderer: {fileID: 3363510896020255326}
+    - renderer: {fileID: 7164094567751315940}
+    - renderer: {fileID: 3159875961116901843}
+    - renderer: {fileID: 4907635493344284756}
+    - renderer: {fileID: 8436007159062744768}
+    - renderer: {fileID: 1335790004079590954}
+    - renderer: {fileID: 2828387456955002074}
+    - renderer: {fileID: 7534994654426259993}
+    - renderer: {fileID: 8095078862397514173}
+    - renderer: {fileID: 2507145262621743248}
+    - renderer: {fileID: 8964935797659478996}
+    - renderer: {fileID: 5718439932054628400}
+    - renderer: {fileID: 6564950218739193447}
+    - renderer: {fileID: 5382766999319345491}
+    - renderer: {fileID: 9025016487834910696}
+    - renderer: {fileID: 5778502140433974045}
+    - renderer: {fileID: 414297863661866611}
+    - renderer: {fileID: 9039271079940074324}
+    - renderer: {fileID: 1006904775267815942}
+    - renderer: {fileID: 3158778703185405205}
+    - renderer: {fileID: 664007472097928703}
+    - renderer: {fileID: 5364361026353282165}
+    - renderer: {fileID: 4031002753998646796}
+    - renderer: {fileID: 167559014477828860}
+    - renderer: {fileID: 4017303071365659194}
+    - renderer: {fileID: 4105580144194264396}
+    - renderer: {fileID: 5746252394706002111}
+    - renderer: {fileID: 5857141825483899879}
+  m_Enabled: 1
 --- !u!1 &1222052201016574064
 GameObject:
   m_ObjectHideFlags: 0

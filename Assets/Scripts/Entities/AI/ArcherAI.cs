@@ -8,6 +8,7 @@ public class ArcherAI : MonoBehaviour
 {
     private Archer _unit;
     private Entity _target;
+    private Entity _other;
 
     private void Awake()
     {
@@ -40,12 +41,12 @@ public class ArcherAI : MonoBehaviour
         */
 
 
-        if (coll.TryGetComponent(out Entity other) && other.IsReady && other.TeamID != _unit.TeamID &&
-            (_target == null || !_target.IsReady || other.AttackPriority > _target.AttackPriority
-            || (other.AttackPriority == _target.AttackPriority && Vector3.Distance(transform.position, _target.Position) > Vector3.Distance(transform.position, coll.transform.position))))
+        if (coll.TryGetComponent(out _other) && _other.IsReady && _other.TeamID != _unit.TeamID &&
+            (_target == null || !_target.IsReady || _other.AttackPriority > _target.AttackPriority
+            || (_other.AttackPriority == _target.AttackPriority && Vector3.Distance(transform.position, _target.Position) > Vector3.Distance(transform.position, coll.transform.position))))
         {
-            _target = other;
-            _unit.SetAttackDestination(other);
+            _target = _other;
+            _unit.SetAttackDestination(_other);
         } 
     }
     private void OnTriggerExit(Collider other)

@@ -93,6 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3928290521851066025}
+  - component: {fileID: 8876150176022130937}
   m_Layer: 6
   m_Name: house_model
   m_TagString: Untagged
@@ -121,6 +122,30 @@ Transform:
   - {fileID: 971133542458024264}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!205 &8876150176022130937
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931184038110116919}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.0039958954, y: 0.7388046, z: -0.025000572}
+  m_Size: 1.4805388
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.03
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 4612534090229948345}
+    - renderer: {fileID: 3042695408607051095}
+    - renderer: {fileID: 7326727492413755340}
+    - renderer: {fileID: 7619073206522555658}
+    - renderer: {fileID: 7914232980116505610}
+    - renderer: {fileID: 2103466982483597863}
+  m_Enabled: 1
 --- !u!1 &6558366000321314412
 GameObject:
   m_ObjectHideFlags: 0

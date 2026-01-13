@@ -53,6 +53,9 @@ MonoBehaviour:
   Name: Building
   Model: {fileID: 4377336240164692782}
   _attackPriority: 10
+  onBuilt:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4377336240164692782
 MonoBehaviour:
   m_ObjectHideFlags: 0

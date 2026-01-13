@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: Name
       value: Town center
       objectReference: {fileID: 0}
+    - target: {fileID: -4214754443977175798, guid: 602849a25abee354faa3668b55b95e8a, type: 3}
+      propertyPath: ConfigName
+      value: town_center
+      objectReference: {fileID: 0}
     - target: {fileID: 46162882172130336, guid: 602849a25abee354faa3668b55b95e8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -123,7 +127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3928290521851066025, guid: 6761c410843c8c047bdf217375134437, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 3928290521851066025, guid: 6761c410843c8c047bdf217375134437, type: 3}
       propertyPath: m_LocalPosition.z

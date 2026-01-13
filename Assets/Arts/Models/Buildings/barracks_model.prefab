@@ -409,6 +409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 678430460160886476}
+  - component: {fileID: 4792145822699747785}
   m_Layer: 6
   m_Name: barracks_model
   m_TagString: Untagged
@@ -448,6 +449,75 @@ Transform:
   - {fileID: 489688099683134463}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &4792145822699747785
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131050632274006739}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 4.9323225, y: 18.720903, z: 2.4716272}
+  m_Size: 55.94388
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.03
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5512777855720915001}
+    - renderer: {fileID: 1520327479409332546}
+    - renderer: {fileID: 6656700526667664305}
+    - renderer: {fileID: 9053650173880463523}
+    - renderer: {fileID: 2763103658371485939}
+    - renderer: {fileID: 3985893951806975820}
+    - renderer: {fileID: 2034249654157532399}
+    - renderer: {fileID: 7967578955066658944}
+    - renderer: {fileID: 729187991061089825}
+    - renderer: {fileID: 8243097207255071666}
+    - renderer: {fileID: 2862859209287746801}
+    - renderer: {fileID: 7642051272419181667}
+    - renderer: {fileID: 3333871178528496959}
+    - renderer: {fileID: 8623088893263373701}
+    - renderer: {fileID: 7014441616352022268}
+    - renderer: {fileID: 2862859209287746803}
+    - renderer: {fileID: 8242956260820061450}
+    - renderer: {fileID: 2599788507514659650}
+    - renderer: {fileID: 2285886859213926652}
+    - renderer: {fileID: 1994733657925971805}
+    - renderer: {fileID: 2483009426615315582}
+    - renderer: {fileID: 1020032126072013122}
+    - renderer: {fileID: 3423785208075420588}
+    - renderer: {fileID: 7194731987493008318}
+    - renderer: {fileID: 7196105452425414328}
+    - renderer: {fileID: 7194598581022552418}
+    - renderer: {fileID: 7194562214235285074}
+    - renderer: {fileID: 3892160208557175511}
+    - renderer: {fileID: 7196374642145625170}
+    - renderer: {fileID: 8144563432145924497}
+    - renderer: {fileID: 1344246383950895752}
+    - renderer: {fileID: 7087833665709429513}
+    - renderer: {fileID: 3711888016648543028}
+    - renderer: {fileID: 6745081042408948119}
+    - renderer: {fileID: 7299256161186689291}
+    - renderer: {fileID: 23190206024782662}
+    - renderer: {fileID: 4499642660620048037}
+    - renderer: {fileID: 7798707320470639664}
+    - renderer: {fileID: 2820029854551278144}
+    - renderer: {fileID: 4147751551265366117}
+    - renderer: {fileID: 2455668698838180801}
+    - renderer: {fileID: 5109735930151745413}
+    - renderer: {fileID: 8144569759206232889}
+    - renderer: {fileID: 8144679239453532753}
+    - renderer: {fileID: 8142931614599129103}
+    - renderer: {fileID: 8142523109103256995}
+    - renderer: {fileID: 5946221414809647643}
+    - renderer: {fileID: 375505032272640169}
+    - renderer: {fileID: 8222401741434774178}
+    - renderer: {fileID: 5781998182300422030}
+    - renderer: {fileID: 5746252394706002111}
+  m_Enabled: 1
 --- !u!1 &1200124859606866032
 GameObject:
   m_ObjectHideFlags: 0
